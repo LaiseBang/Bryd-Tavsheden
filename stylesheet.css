@@ -1,3 +1,258 @@
+/* variabel that works on the whole document */
+:root {
+    --gamewidth: 100vw;
+}
+
 * {
-    margin: 0 auto;
+    margin: 0;
+}
+
+/* style for the whole document */
+
+h1 {
+    text-align: center;
+}
+.half_size {
+    transform: scale(0.5);
+}
+.hide {
+    display: none;
+}
+
+/* game */
+
+#gamewrapper {
+  width: var(--gamewidth);
+  height: var(--gamewidth);
+  overflow: hidden;
+  background-color: aquamarine;
+  position: absolute;
+  } 
+
+#livingroom {
+  background-image: url(/img/backgrounds/stue.png);
+  background-repeat: no-repeat;
+  background-size: 100%;
+  width: var(--gamewidth);
+  height: var(--gamewidth);
+  overflow: hidden;
+  position: absolute;
+}
+
+#door {
+  background-image: url(/img/backgrounds/stue_front.png);
+  background-repeat: no-repeat;
+  background-size: 100%;
+  width: var(--gamewidth);
+  height: var(--gamewidth);
+  overflow: hidden;
+  position: absolute;
+}
+
+#kitchen {
+  background-image: url(/img/backgrounds/kitchen.png);
+  background-repeat: no-repeat;
+  background-size: 100%;
+  width: var(--gamewidth);
+  height: var(--gamewidth);
+  overflow: hidden;
+  position: absolute;
+}
+
+#kitchen_front{
+  background-image: url(/img/backgrounds/kitchen_front.png);
+  background-repeat: no-repeat;
+  background-size: 100%;
+  width: var(--gamewidth);
+  height: var(--gamewidth);
+  overflow: hidden;
+  position: absolute;
+}
+
+#titlepage {
+  width: var(--gamewidth);
+  height: 100%;
+  background-color: bisque;
+  background-size: 100%;
+  position: absolute;
+}
+
+/* -------------------------------- Oliver --------------------------- */
+
+#oliver_container {
+    position: absolute;
+}
+
+.oliver_start_pos {
+    left: 45%;
+    top: 19%;
+}
+
+#oliver_sprite {
+    background-image: url(img/spritesheets/OliverSpritesheet.svg);
+    width: 60vw;
+    height: 115vw;
+    background-size: 900% 300%;
+   
+}
+
+/* ------------------- Oliver s1 -------------- */
+
+.oliver_talkcycle {
+    animation-name: oliver_talkcycle_kf;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-timing-function: steps(5);
+    animation-fill-mode: both;
+}
+
+@keyframes oliver_talkcycle_kf {
+    0% {
+      background-position: 0% -200%;
+    }
+    100% {
+      background-position: -500% -200%;
+    }
+  }
+
+  .oliver_walk_to_kitchen {
+    animation-name: oliver_walk_to_kitchen_kf;
+    animation-duration: 4s;
+    animation-iteration-count: 1;
+    animation-fill-mode: both;
+    animation-timing-function: ease;
+}
+
+@keyframes oliver_walk_to_kitchen_kf{
+    0% {
+        left: 45%;
+        top: 19%;
+    }
+
+    85% {
+        left: -15%;
+        top: -23%;
+        transform: scale(0.26);
+    }
+    100% {
+        left: -30%;
+        top: -23%;
+        transform: scale(0.26);
+    }
+}
+
+  .oliver_walkcycle{
+    animation-name: oliver_walkcycle_kf;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-timing-function: steps(9);
+    animation-fill-mode: both;
+  }
+
+  @keyframes oliver_walkcycle_kf {
+    0% {
+      background-position: 0% -100%;
+    }
+    100% {
+      background-position: -900% -100%;
+    }
+  }
+
+/* ------ oliver in s2 -------- */
+
+.oliver_walk_into_kitchen {
+  animation-name: oliver_walk_into_kitchen_kf;
+    animation-duration: 4s;
+    animation-iteration-count: 1;
+    animation-fill-mode: both;
+    animation-timing-function: ease;
+}
+
+@keyframes oliver_walk_into_kitchen_kf{
+  0% {
+    left: 75%;
+    top: -3%;
+    transform: scale(0.4);
+  }
+  25% {
+    left: 50%;
+     top: -3%;
+     transform: scale(0.4)
+  }
+
+  100% {
+    left: 35%;
+    top: 19%;
+    transform: scale(1);
+    
+  }
+}
+/* ---------------------- Maria -----------------------------*/
+
+
+#maria_container {
+  position: absolute;
+}
+.maria_start_pos {
+  left: 5%;
+  top: 19%;
+}
+
+#maria_sprite {
+  background-image: url(img/spritesheets/maria_spritesheet.svg);
+  width: 48vw;
+  height: 116vw;
+  background-size: 900% 200%;
+  
+}
+
+.maria_talkcycle {
+  animation-name: maria_talkcycle_kf;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+  animation-timing-function: steps(5);
+  animation-fill-mode: both;
+}
+
+@keyframes maria_talkcycle_kf {
+  0% {
+    background-position: 0% 0%;
+  }
+  100% {
+   background-position: -500% 0%;
+  }
+}
+
+/* ------------ Sif -----------------*/
+
+#sif_container {
+  position: absolute;
+}
+.sif_start_pos {
+  left: 5%;
+  top: 19%;
+}
+
+#sif_sprite {
+  background-image: url(img/spritesheets/sifSpritesheet.svg);
+  width: 39vw;
+  height: 116vw;
+  background-size: 500% 100%;
+}
+
+.sif_talkcycle {
+  animation-name: sif_talkcycle_kf;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+  animation-timing-function: steps(5);
+  animation-fill-mode: both;
+}
+
+@keyframes sif_talkcycle_kf {
+  0% {
+    background-position: 0% 0%;
+  }
+  100% {
+   background-position: -500% 0%;
+  }
 }
