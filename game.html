@@ -9,32 +9,76 @@
     <link rel="stylesheet" href="stylesheet.css">
 </head>
 
-<body>
-    <div id="sounds"></div>
+<body class="">
 
-    <div id="gamewrapper">
+    <div id="sounds">
+        <!-- ----------Foley------------- -->
+        <audio id="private_party" src="sounds/foley/private_party.wav">
+            Your browser does not support the audio element.
+            <!-- credit - kickhat
+                link - https://freesound.org/people/kickhat/sounds/328969/
+                changes: cut sound short -->
+        </audio>
+        <audio id="intro_music" src="sounds/foley/IntroMusic.wav">
+            Your browser does not support the audio element.
+            <!-- credit - zagi2
+            link - https://freesound.org/people/zagi2/sounds/179122/#
+            changes: cut sound short -->
+        </audio>
+        <audio id="clock" src="sounds/foley/clock.wav">
+            Your browser does not support the audio element.
+            <!-- Wall Clock Ticking.wav
+                credit - straget
+                link - https://freesound.org/people/straget/sounds/405423/
+                changes - sound was cut short -->
+        </audio>
 
-        <div class="hide" id="livingroom"></div>
-        <div class="" id="kitchen"></div>
-        <div class="oliver_start_pos" id="oliver_container">
-            <div class="oliver_walkcycle" id="oliver_sprite"></div>
+
+
+
+        <!-- -----------------Dialog---------------------- -->
+        <audio id="oliver_beer" src="sounds/dialog/oliverBeer.mp3">
+            Your browser does not support the audio element.
+        </audio>
+    </div>
+
+    <div id="gamewrapper" class="">
+        <div id="fadeId" class="hide"></div>
+
+        <div id="livingroom" class="hide"></div>
+        <div id="dance_people_container" class="dance_people_start_pos hide">
+            <div id="dance_people_sprite" class="dance_people_dancecycle"></div>
         </div>
-        <div class="sif_start_pos" id="sif_container">
-            <div class="sif_talkcycle" id="sif_sprite"></div>
+
+        <div id="oliver_container" class="oliver_start_pos hide">
+            <div id="oliver_sprite" class=""></div>
         </div>
-        <div class="" id="kitchen_front"></div>
-        <div class="maria_start_pos hide" id="maria_container">
-            <div class="maria_talkcycle" id="maria_sprite"></div>
+        <div id="door" class="hide"></div>
+        <div id="maria_container" class="maria_start_pos hide">
+            <div id="maria_sprite" class=""></div>
         </div>
-        <div class="hide" id="door"></div>
+        <div id="sif_container" class="sif_start_pos hide">
+            <div id="sif_sprite" class=""></div>
+        </div>
 
 
-        <div id="titlepage" class="hide">
+        <div id="kitchen" class="hide"></div>
+        <div id="kitchen_front" class="hide"></div>
+
+
+        <div id="titlepage" class="">
             <h1 id="choose_player">Vælg spiller</h1>
-            <p>Maria</p>
-            <img class="half_size" src="/img/choice_img/mariaBobblehead.png" alt="Vælg spiller Maria">
-            <p>Oliver</p>
-            <img class="half_size" src="/img/choice_img/oliverBobbleg´head.png" alt="Vælg spiller Oliver">
+            <p class="player_text">Maria</p>
+            <img id="maria" class="half_size bounce player" onClick="get_clicked_id(this.id)"
+                src="/img/choice_img/mariaBobblehead.png" alt="Vælg spiller Maria">
+            <p class="player_text">Oliver</p>
+            <img id="oliver" class="half_size bounce player" onClick="get_clicked_id(this.id)"
+                src="/img/choice_img/oliverBobblehead.png" alt="Vælg spiller Oliver">
+        </div>
+        <div id="intro" class="">
+            <h1>Du fortjener bedre!</h1>
+            <h2>et dilemmaspil om kærestevold</h2>
+            <div id="startGame" class="">Start</div>
         </div>
         <div id="creditpage" class="creditpage  _off"></div>
 
@@ -42,8 +86,10 @@
             <h1 class="play_again">Prøv igen</h1>
         </div>
     </div>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
     <script src="script.js"></script>
-
+    <script src="game.js"></script>
 
 </body>
 
