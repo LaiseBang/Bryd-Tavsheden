@@ -183,6 +183,34 @@ h2 {
   position: absolute;
 }
 
+#choice_text_container_v2,
+#choice_text_container_v4 {
+  width: var(--gamewidth);
+  background-color: aqua;
+
+}
+#choice_text_container_v2 img,
+#choice_text_container_v4 img {
+max-width: var(--gamewidth);
+position: relative;
+}
+
+#choice_text_container_v2 p,
+#choice_text_container_v4 p {
+  max-width: var(--gamewidth);
+  position: absolute;
+  font-size: 1.8em;
+  }
+
+  /* --------------- choices ---------------------- */
+.choice_a {
+  top: 30px;
+  left: 15px;
+}
+.choice_b {
+  top: 190px;
+  left: 15px;
+}
 /* ---------------------- select character ----------------*/
 .player_text {
   text-align: center;
@@ -199,7 +227,9 @@ h2 {
 
 /* -------------------------------- Oliver --------------------------- */
 
-#oliver_container {
+#oliver_container,
+#oliver_container2,
+#oliver_container3 {
     position: absolute;
     z-index: 4;
 }
@@ -209,7 +239,9 @@ h2 {
     top: 19%;
 }
 
-#oliver_sprite {
+#oliver_sprite,
+#oliver_sprite2,
+#oliver_sprite3 {
     background-image: url(img/spritesheets/Oliver_spritesheet.svg);
     width: 60vw;
     height: 115vw;
@@ -282,7 +314,8 @@ h2 {
 
 /* ------ oliver in s2 -------- */
 
-.oliver_walk_into_kitchen {
+.oliver_walk_into_kitchen,
+.maria_walk_into_kitchen {
   animation-name: oliver_walk_into_kitchen_kf;
     animation-duration: 4s;
     animation-iteration-count: 1;
@@ -303,8 +336,8 @@ h2 {
   }
 
   100% {
-    left: 35%;
-    top: 19%;
+    left: 32%;
+    top: 20%;
     transform: scale(1);
     
   }
@@ -315,7 +348,7 @@ h2 {
   animation-duration: 1s;
   animation-iteration-count: 4;
   animation-timing-function: steps(9);
-  animation-fill-mode: both;
+  animation-fill-mode: forwards;
 }
 
 @keyframes oliver_walkcycle_right_kf {
@@ -352,13 +385,19 @@ h2 {
 }
 }
 
+.oliver_start_pos_kitchen {
+  left: 204px;
+  top: 51px;
+}
 /* ---------------------- Maria -----------------------------*/
 
 #maria {
   cursor: pointer;
 }
 
-#maria_container {
+#maria_container,
+#maria_container2,
+#maria_container3 {
   position: absolute;
   z-index: 4;
 }
@@ -367,7 +406,9 @@ h2 {
   top: 19%;
 }
 
-#maria_sprite {
+#maria_sprite,
+#maria_sprite2, 
+#maria_sprite3 {
   background-image: url(img/spritesheets/maria_spritesheet.svg);
   width: 48vw;
   height: 116vw;
@@ -392,6 +433,24 @@ h2 {
   }
 }
 
+.maria_walkcycle{
+  animation-name: maria_walkcycle_kf;
+  animation-duration: 1s;
+  animation-iteration-count: 4;
+  animation-timing-function: steps(9);
+  animation-fill-mode: both;
+}
+
+@keyframes maria_walkcycle_kf {
+  0% {
+    background-position: 0% -100%;
+  }
+  100% {
+    background-position: -900% -100%;
+  }
+}
+
+
 /* ------------ Sif -----------------*/
 
 #sif_container {
@@ -400,7 +459,7 @@ h2 {
 }
 
 .sif_start_pos {
-  left: 5%;
+  left: 2%;
   top: 19%;
 }
 
