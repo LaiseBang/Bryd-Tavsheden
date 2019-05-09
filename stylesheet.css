@@ -1,228 +1,236 @@
 /* variabel that works on the whole document */
 :root {
-    --gamewidth: 100vw;
+	--gamewidth: 100vw;
 }
 
 /* style for the whole document */
 * {
-    margin: 0;
+	margin: 0;
 }
 
 html {
-  scroll-behavior: smooth;
+	scroll-behavior: smooth;
 }
 
 h1 {
-    text-align: center;
-    
+	text-align: center;
+
 }
 
 h2 {
-  text-align: center;
+	text-align: center;
 }
+
 .hide {
-    display: none;
+	display: none;
 }
 
 /* ---------------- fade ---------------- */
 
 #fadeId {
-  width: var(--gamewidth);
-  height: var(--gamewidth);
-  opacity: 0;
+	width: var(--gamewidth);
+	height: var(--gamewidth);
+	opacity: 0;
 }
 
 .fade {
-  animation-name: fade_kf;
-  animation-duration: 1.5s;
-  animation-iteration-count: 1;
-  animation-timing-function: steps(100);
-  animation-fill-mode: forwards;
-  background-color: black;
-  z-index: 10000;
+	animation-name: fade_kf;
+	animation-duration: 1.5s;
+	animation-iteration-count: 1;
+	animation-timing-function: steps(100);
+	animation-fill-mode: forwards;
+	background-color: black;
+	z-index: 10000;
 }
 
 @keyframes fade_kf {
-  0% {
-    opacity: 0;
-  }
- 
-  100% {
-    opacity: 1;
-  }
+	0% {
+		opacity: 0;
+	}
+
+	100% {
+		opacity: 1;
+	}
 }
 
-.fade_up{
-  animation-name: fade_up_kf;
-  animation-duration: 1.5s;
-  animation-iteration-count: 1;
-  animation-timing-function: steps(100);
-  animation-fill-mode: forwards;
-  background-color: black;
-  z-index: 10000;
+.fade_up {
+	animation-name: fade_up_kf;
+	animation-duration: 1.5s;
+	animation-iteration-count: 1;
+	animation-timing-function: steps(100);
+	animation-fill-mode: forwards;
+	background-color: black;
+	z-index: 10000;
 }
 
 @keyframes fade_up_kf {
-  0% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-  }
+	0% {
+		opacity: 1;
+	}
+
+	100% {
+		opacity: 0;
+	}
 }
+
 /* ---------------- startGame ------------------*/
 #startGame {
-  background-color: #20BA2F;
-  border-color: #14991E;
-  border-style: solid;
-  border-width: 4px;
-  width: 50px;
-  height: 20px;
-  text-align: center;
-  position: absolute;
-  top: 325px;
-  left: 290px;
+	background-color: #20BA2F;
+	border-color: #14991E;
+	border-style: solid;
+	border-width: 4px;
+	width: 50px;
+	height: 20px;
+	text-align: center;
+	position: absolute;
+	top: 325px;
+	left: 290px;
 }
+
 /* --------------------titlepage---------------- */
 .bounce {
-  animation-name: bounce_kf;
-  animation-duration: 1s;
-  animation-iteration-count: infinite;
-  animation-timing-function: steps(2);
-  /* animation-fill-mode: both; */
-  /* transition-timing-function: cubic-bezier(.01,.93,.83,.67); */
+	animation-name: bounce_kf;
+	animation-duration: 1s;
+	animation-iteration-count: infinite;
+	animation-timing-function: steps(2);
+	/* animation-fill-mode: both; */
+	/* transition-timing-function: cubic-bezier(.01,.93,.83,.67); */
 }
 
 @keyframes bounce_kf {
-  0% {
-  transform: rotate(10deg);
-  }
-  100% {
-  transform: rotate(-20deg);
-  }
+	0% {
+		transform: rotate(10deg);
+	}
+
+	100% {
+		transform: rotate(-20deg);
+	}
 }
 
 /* game */
 
 #gamewrapper {
-  width: var(--gamewidth);
-  height: var(--gamewidth);
-  max-width: 800px;
-  overflow: hidden;
-    position: absolute;
-  } 
+	width: var(--gamewidth);
+	height: var(--gamewidth);
+	max-width: 800px;
+	overflow: hidden;
+	position: absolute;
+}
 
 #livingroom {
-  background-image: url(/img/backgrounds/livingroom.png);
-  background-repeat: no-repeat;
-  background-size: 100%;
-  width: var(--gamewidth);
-  height: var(--gamewidth);
-  max-width: 800px;
-  overflow: hidden;
-  position: absolute;
-  top: 0;
-  z-index: 1;
+	background-image: url(/img/backgrounds/livingroom.png);
+	background-repeat: no-repeat;
+	background-size: 100%;
+	width: var(--gamewidth);
+	height: var(--gamewidth);
+	max-width: 800px;
+	overflow: hidden;
+	position: absolute;
+	top: 0;
+	z-index: 1;
 }
 
 #door {
-  background-image: url(/img/backgrounds/livingroom_front.svg);
-  background-repeat: no-repeat;
-  background-size: 23%;
-  width: var(--gamewidth);
-  height: var(--gamewidth);
-  max-width: 800px;
-  overflow: hidden;
-  position: absolute;
-  top: 0;
-  z-index: 4;
+	background-image: url(/img/backgrounds/livingroom_front.svg);
+	background-repeat: no-repeat;
+	background-size: 23%;
+	width: var(--gamewidth);
+	height: var(--gamewidth);
+	max-width: 800px;
+	overflow: hidden;
+	position: absolute;
+	top: 0;
+	z-index: 4;
 }
 
 #kitchen {
-  background-image: url(/img/backgrounds/kitchen.png);
-  background-repeat: no-repeat;
-  background-size: 100%;
-  width: var(--gamewidth);
-  height: var(--gamewidth);
-  max-width: 800px;
-  overflow: hidden;
-  position: absolute;
-  top: 0;
+	background-image: url(/img/backgrounds/kitchen.png);
+	background-repeat: no-repeat;
+	background-size: 100%;
+	width: var(--gamewidth);
+	height: var(--gamewidth);
+	max-width: 800px;
+	overflow: hidden;
+	position: absolute;
+	top: 0;
 }
 
-#kitchen_front{
-  background-image: url(/img/backgrounds/kitchen_front.png);
-  background-repeat: no-repeat;
-  background-size: 100%;
-  width: var(--gamewidth);
-  height: var(--gamewidth);
-  max-width: 800px;
-  overflow: hidden;
-  position: absolute;
-  top: 0;
+#kitchen_front {
+	background-image: url(/img/backgrounds/kitchen_front.png);
+	background-repeat: no-repeat;
+	background-size: 100%;
+	width: var(--gamewidth);
+	height: var(--gamewidth);
+	max-width: 800px;
+	overflow: hidden;
+	position: absolute;
+	top: 0;
 }
 
 #titlepage {
-  width: var(--gamewidth);
-  /* height: var(--gamewidth); */
-  max-width: 800px;
-  background-color: bisque;
-  background-size: 100%;
-  position: absolute; 
-  padding: 0 0 30px 0px;
+	width: var(--gamewidth);
+	/* height: var(--gamewidth); */
+	max-width: 800px;
+	background-color: bisque;
+	background-size: 100%;
+	position: absolute;
+	padding: 0 0 30px 0px;
 }
 
 #intro {
-  background-image: url(/img/backgrounds/frontpage.jpg);
-  background-repeat: no-repeat;
-  background-size: 100%;
-  width: var(--gamewidth);
-  height: var(--gamewidth);
-  max-width: 800px;
-  overflow: hidden;
-  position: absolute;
+	background-image: url(/img/backgrounds/frontpage.jpg);
+	background-repeat: no-repeat;
+	background-size: 100%;
+	width: var(--gamewidth);
+	height: var(--gamewidth);
+	max-width: 800px;
+	overflow: hidden;
+	position: absolute;
 }
 
 #choice_text_container_v2,
 #choice_text_container_v4 {
-  width: var(--gamewidth);
-  background-color: aqua;
+	width: var(--gamewidth);
+	background-color: aqua;
 
 }
+
 #choice_text_container_v2 img,
 #choice_text_container_v4 img {
-max-width: var(--gamewidth);
-position: relative;
+	max-width: var(--gamewidth);
+	position: relative;
 }
 
 #choice_text_container_v2 p,
 #choice_text_container_v4 p {
-  max-width: var(--gamewidth);
-  position: absolute;
-  font-size: 1.8em;
-  }
+	max-width: var(--gamewidth);
+	position: absolute;
+	font-size: 1.8em;
+}
 
-  /* --------------- choices ---------------------- */
+/* --------------- choices ---------------------- */
 .choice_a {
-  top: 30px;
-  left: 15px;
+	top: 30px;
+	left: 15px;
 }
+
 .choice_b {
-  top: 190px;
-  left: 15px;
+	top: 190px;
+	left: 15px;
 }
+
 /* ---------------------- select character ----------------*/
 .player_text {
-  text-align: center;
-  line-height: 2em;
-  font-size: 2em;
+	text-align: center;
+	line-height: 2em;
+	font-size: 2em;
 }
 
 .player {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 27%;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	width: 27%;
 }
 
 /* -------------------------------- Oliver --------------------------- */
@@ -230,294 +238,351 @@ position: relative;
 #oliver_container,
 #oliver_container2,
 #oliver_container3 {
-    position: absolute;
-    z-index: 4;
+	position: absolute;
+	z-index: 4;
 }
 
 .oliver_start_pos {
-    left: 45%;
-    top: 19%;
+	left: 45%;
+	top: 19%;
 }
 
 #oliver_sprite,
 #oliver_sprite2,
 #oliver_sprite3 {
-    background-image: url(img/spritesheets/Oliver_spritesheet.svg);
-    width: 60vw;
-    height: 115vw;
-    background-size: 900% 300%;
-   
+	background-image: url(img/spritesheets/Oliver_spritesheet.svg);
+	width: 60vw;
+	height: 115vw;
+	background-size: 900% 300%;
+
 }
 
 /* ------------------- Oliver s1 -------------- */
 
 .oliver_talkcycle {
-    animation-name: oliver_talkcycle_kf;
-    animation-duration: 1s;
-    animation-iteration-count: infinite;
-    animation-timing-function: steps(5);
-    animation-fill-mode: both;
-    
+	animation-name: oliver_talkcycle_kf;
+	animation-duration: 1s;
+	animation-iteration-count: infinite;
+	animation-timing-function: steps(5);
+	animation-fill-mode: both;
+
 }
 
 @keyframes oliver_talkcycle_kf {
-    0% {
-      background-position: 0% 0%;
-    }
-    100% {
-      background-position: -500% 0%;
-    }
-  }
+	0% {
+		background-position: 0% 0%;
+	}
 
-  .oliver_walk_to_kitchen {
-    animation-name: oliver_walk_to_kitchen_kf;
-    animation-duration: 4s;
-    animation-iteration-count: 1;
-    animation-fill-mode: both;
-    animation-timing-function: ease;
+	100% {
+		background-position: -500% 0%;
+	}
 }
 
-@keyframes oliver_walk_to_kitchen_kf{
-    0% {
-        left: 45%;
-        top: 19%;
-    }
-
-    85% {
-        left: -15%;
-        top: -23%;
-        transform: scale(0.26);
-    }
-    100% {
-        left: -30%;
-        top: -23%;
-        transform: scale(0.26);
-    }
+.oliver_walk_to_kitchen {
+	animation-name: oliver_walk_to_kitchen_kf;
+	animation-duration: 4s;
+	animation-iteration-count: 1;
+	animation-fill-mode: both;
+	animation-timing-function: ease;
 }
 
-  .oliver_walkcycle{
-    animation-name: oliver_walkcycle_kf;
-    animation-duration: 1s;
-    animation-iteration-count: 4;
-    animation-timing-function: steps(9);
-    animation-fill-mode: both;
-  }
+@keyframes oliver_walk_to_kitchen_kf {
+	0% {
+		left: 45%;
+		top: 19%;
+	}
 
-  @keyframes oliver_walkcycle_kf {
-    0% {
-      background-position: 0% -200%;
-    }
-    100% {
-      background-position: -900% -200%;
-    }
-  }
+	85% {
+		left: -15%;
+		top: -23%;
+		transform: scale(0.26);
+	}
+
+	100% {
+		left: -30%;
+		top: -23%;
+		transform: scale(0.26);
+	}
+}
+
+.oliver_walkcycle {
+	animation-name: oliver_walkcycle_kf;
+	animation-duration: 1s;
+	animation-iteration-count: 4;
+	animation-timing-function: steps(9);
+	animation-fill-mode: both;
+}
+
+@keyframes oliver_walkcycle_kf {
+	0% {
+		background-position: 0% -200%;
+	}
+
+	100% {
+		background-position: -900% -200%;
+	}
+}
 
 /* ------ oliver in s2 -------- */
 
 .oliver_walk_into_kitchen,
 .maria_walk_into_kitchen {
-  animation-name: oliver_walk_into_kitchen_kf;
-    animation-duration: 4s;
-    animation-iteration-count: 1;
-    animation-fill-mode: forwards;
-    animation-timing-function: ease;
+	animation-name: oliver_walk_into_kitchen_kf;
+	animation-duration: 4s;
+	animation-iteration-count: 1;
+	animation-fill-mode: forwards;
+	animation-timing-function: ease;
 }
 
-@keyframes oliver_walk_into_kitchen_kf{
-  0% {
-    left: 75%;
-    top: -3%;
-    transform: scale(0.4);
-  }
-  25% {
-    left: 50%;
-     top: -3%;
-     transform: scale(0.4)
-  }
+@keyframes oliver_walk_into_kitchen_kf {
+	0% {
+		left: 75%;
+		top: -3%;
+		transform: scale(0.4);
+	}
 
-  100% {
-    left: 32%;
-    top: 20%;
-    transform: scale(1);
-    
-  }
+	25% {
+		left: 50%;
+		top: -3%;
+		transform: scale(0.4)
+	}
+
+	100% {
+		left: 32%;
+		top: 20%;
+		transform: scale(1);
+
+	}
 }
+
 /* ------ oliver in s4 -------- */
-.oliver_walkcycle_right{
-  animation-name: oliver_walkcycle_right_kf;
-  animation-duration: 1s;
-  animation-iteration-count: 4;
-  animation-timing-function: steps(9);
-  animation-fill-mode: forwards;
+.oliver_walkcycle_right {
+	animation-name: oliver_walkcycle_right_kf;
+	animation-duration: 1s;
+	animation-iteration-count: 4;
+	animation-timing-function: steps(9);
+	animation-fill-mode: forwards;
 }
 
 @keyframes oliver_walkcycle_right_kf {
-  0% {
-    background-position: 0% -100%;
-  }
-  100% {
-    background-position: -900% -100%;
-  }
+	0% {
+		background-position: 0% -100%;
+	}
+
+	100% {
+		background-position: -900% -100%;
+	}
 }
+
 .oliver_walk_into_livingroom {
-  animation-name: oliver_walk_into_livingroom_kf;
-    animation-duration: 4s;
-    animation-iteration-count: 1;
-    animation-fill-mode: forwards;
-    animation-timing-function: ease;
+	animation-name: oliver_walk_into_livingroom_kf;
+	animation-duration: 4s;
+	animation-iteration-count: 1;
+	animation-fill-mode: forwards;
+	animation-timing-function: ease;
 }
 
-@keyframes oliver_walk_into_livingroom_kf{
-  0% {
-    left: -30%;
-    top: -23%;
-    transform: scale(0.26);
-}
+@keyframes oliver_walk_into_livingroom_kf {
+	0% {
+		left: -30%;
+		top: -23%;
+		transform: scale(0.26);
+	}
 
-15% {
-    left: -15%;
-    top: -23%;
-    transform: scale(0.26);
-}
-100% {
-    left: 45%;
-    top: 19%;
-}
+	15% {
+		left: -15%;
+		top: -23%;
+		transform: scale(0.26);
+	}
+
+	100% {
+		left: 45%;
+		top: 19%;
+	}
 }
 
 .oliver_start_pos_kitchen {
-  left: 204px;
-  top: 51px;
+	left: 204px;
+	top: 51px;
 }
+
 /* ---------------------- Maria -----------------------------*/
 
 #maria {
-  cursor: pointer;
+	cursor: pointer;
 }
 
 #maria_container,
 #maria_container2,
 #maria_container3 {
-  position: absolute;
-  z-index: 4;
+	position: absolute;
+	z-index: 4;
 }
+
 .maria_start_pos {
-  left: 5%;
-  top: 19%;
+	left: 5%;
+	top: 19%;
 }
 
 #maria_sprite,
-#maria_sprite2, 
+#maria_sprite2,
 #maria_sprite3 {
-  background-image: url(img/spritesheets/maria_spritesheet.svg);
-  width: 48vw;
-  height: 116vw;
-  background-size: 900% 200%;
-  
+	background-image: url(img/spritesheets/maria_spritesheet.svg);
+	width: 48vw;
+	height: 116vw;
+	background-size: 900% 200%;
+
 }
 
 .maria_talkcycle {
-  animation-name: maria_talkcycle_kf;
-  animation-duration: 1s;
-  animation-iteration-count: infinite;
-  animation-timing-function: steps(5);
-  animation-fill-mode: both;
+	animation-name: maria_talkcycle_kf;
+	animation-duration: 1s;
+	animation-iteration-count: infinite;
+	animation-timing-function: steps(5);
+	animation-fill-mode: both;
 }
 
 @keyframes maria_talkcycle_kf {
-  0% {
-    background-position: 0% 0%;
-  }
-  100% {
-   background-position: -500% 0%;
-  }
+	0% {
+		background-position: 0% 0%;
+	}
+
+	100% {
+		background-position: -500% 0%;
+	}
 }
 
-.maria_walkcycle{
-  animation-name: maria_walkcycle_kf;
-  animation-duration: 1s;
-  animation-iteration-count: 4;
-  animation-timing-function: steps(9);
-  animation-fill-mode: both;
+.maria_walkcycle {
+	animation-name: maria_walkcycle_kf;
+	animation-duration: 1s;
+	animation-iteration-count: 4;
+	animation-timing-function: steps(9);
+	animation-fill-mode: both;
 }
 
 @keyframes maria_walkcycle_kf {
-  0% {
-    background-position: 0% -100%;
-  }
-  100% {
-    background-position: -900% -100%;
-  }
+	0% {
+		background-position: 0% -100%;
+	}
+
+	100% {
+		background-position: -900% -100%;
+	}
 }
 
 
 /* ------------ Sif -----------------*/
 
 #sif_container {
-  position: absolute;
-  z-index: 3;
+	position: absolute;
+	z-index: 3;
 }
 
 .sif_start_pos {
-  left: 2%;
-  top: 19%;
+	left: 2%;
+	top: 19%;
 }
 
 #sif_sprite {
-  background-image: url(img/spritesheets/sifSpritesheet.svg);
-  width: 39vw;
-  height: 116vw;
-  background-size: 500% 100%;
+	background-image: url(img/spritesheets/sifSpritesheet.svg);
+	width: 39vw;
+	height: 116vw;
+	background-size: 500% 100%;
 }
 
 .sif_talkcycle {
-  animation-name: sif_talkcycle_kf;
-  animation-duration: 1s;
-  animation-iteration-count: infinite;
-  animation-timing-function: steps(5);
-  animation-fill-mode: both;
+	animation-name: sif_talkcycle_kf;
+	animation-duration: 1s;
+	animation-iteration-count: infinite;
+	animation-timing-function: steps(5);
+	animation-fill-mode: both;
 }
 
 @keyframes sif_talkcycle_kf {
-  0% {
-    background-position: 0% 0%;
-  }
-  100% {
-   background-position: -500% 0%;
-  }
+	0% {
+		background-position: 0% 0%;
+	}
+
+	100% {
+		background-position: -500% 0%;
+	}
 }
 
 /* ------------------ Dance People ---------------------- */
 
 #dance_people_container {
-  position: absolute;
-  z-index: 3;
+	position: absolute;
+	z-index: 3;
 }
+
 .dance_people_start_pos {
-  left: 0%;
-  top: 10%;
+	left: 0%;
+	top: 10%;
 }
 
 #dance_people_sprite {
-  background-image: url(img/spritesheets/dans.svg);
-  width: 125vw;
-  height: 71vw;
-  background-size: 600% 200%;
+	background-image: url(img/spritesheets/dans.svg);
+	width: 125vw;
+	height: 71vw;
+	background-size: 600% 200%;
 }
 
 .dance_people_dancecycle {
-  animation-name: dance_people_talkcycle_kf;
-  animation-duration: 2s;
-  animation-iteration-count: infinite;
-  animation-timing-function: steps(6);
-  animation-fill-mode: both;
+	animation-name: dance_people_talkcycle_kf;
+	animation-duration: 2s;
+	animation-iteration-count: infinite;
+	animation-timing-function: steps(6);
+	animation-fill-mode: both;
 }
 
 @keyframes dance_people_talkcycle_kf {
-  0% {
-    background-position: 0% -100%;
-  }
-  100% {
-   background-position: -600% -100%;
-  }
+	0% {
+		background-position: 0% -100%;
+	}
+
+	100% {
+		background-position: -600% -100%;
+	}
+}
+
+/*********************CLOCK*************************/
+#clock_container {
+	visibility: visible;
+
+}
+
+.hide {
+	display: none;
+}
+
+#clock_container svg {
+	width: 80vw;
+	height: 80vh;
+	z-index: 100;
+	position: fixed;
+	top: 5vh;
+	left: 77px;
+
+}
+
+#prik_i_midten {
+	transform: scale(1.5);
+	transform-origin: 50% 50%;
+}
+
+#minut_viser {
+	animation: clockrotate 4s infinite linear;
+	transform-origin: 50% 50%;
+}
+
+
+#time_viser {
+	transform-origin: 50% 50%;
+	animation: clockrotate 10s infinite linear;
+}
+
+@keyframes clockrotate {
+	100% {
+		transform: rotateZ(360deg);
+	}
 }
