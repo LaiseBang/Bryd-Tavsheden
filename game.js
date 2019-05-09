@@ -30,15 +30,22 @@ const kitchen = document.querySelector("#kitchen");
 const kitchen_front = document.querySelector("#kitchen_front");
 const choice_text_container_v2 = document.querySelector("#choice_text_container_v2");
 const choice_text_container_v4 = document.querySelector("#choice_text_container_v4");
+const choice_text_container_v3 = document.querySelector("#choice_text_container_v3");
 const choice_text_container_v5 = document.querySelector("#choice_text_container_v5");
 const choice_text_container_v6 = document.querySelector("#choice_text_container_v6");
+const choice_text_container_v7 = document.querySelector("#choice_text_container_v7");
+
 
 // elements
 const choice_a = document.querySelector(".choice_a");
 const choice_b = document.querySelector(".choice_b");
+const choice_c = document.querySelector(".choice_c");
+const choice_d = document.querySelector(".choice_d");
 const clock = document.getElementById("clock");
+
 // sounds
 const private_party = document.querySelector("#private_party");
+const choice_sound = document.getElementById("choiceSound");
 
 // Siden er loadet
 window.addEventListener("DOMContentLoaded", intro);
@@ -183,18 +190,17 @@ function s1FadeToBlack() {
     // Start anim: fadeToBlack
     // fade_id.classList.add("fade");
     document.querySelector(".oliver_walk_to_kitchen").removeEventListener("webkitAnimationEnd", s1FadeToBlack);
-    checkPlayer();
+    checkPlayerS1();
 }
 
-function checkPlayer() {
+function checkPlayerS1() {
     console.log("checkPlayer");
     // CheckVariable
-    if (player == "maria") {
+    if (player == "oliver") {
         setKitchen();
         console.log(player);
 
-    } else if (player == "oliver") {
-        // setTimeout("s3()", 1500);
+    } else if (player == "maria") {
         s3();
     } else {
         alert("Noget gik galt prøv igen");
@@ -317,7 +323,7 @@ function v2() {
     console.log("v2");
     // Start anim: fadeUpFromBlack
     // play sound: choiceSound
-    document.getElementById("choiceSound").play();
+    choice_sound.play();
     // show choice_scene
     choice_text_container_v2.classList.remove("hide");
     // Start anim: 2a
@@ -339,7 +345,7 @@ function v2_2aFadeToBlack() {
 function s4OliverToMaria() {
     console.log("s4OliverToMaria");
     // Stop sound: choiceSound
-    document.getElementById("choiceSound").pause();
+    choice_sound.pause();
     // set scene
     choice_text_container_v2.classList.add("hide");
     livingroom.classList.remove("hide");
@@ -350,6 +356,7 @@ function s4OliverToMaria() {
     // Start anim: fadeUpFromBlack
     // fade sound: partySound
     private_party.play();
+    private_party.volume = 0.03;
     // Start anim: OliverWalkToMaria
     oliver_container_s4.classList.add("oliver_walk_into_livingroom");
     // Start anim: OliverWalkcycle
@@ -400,10 +407,26 @@ function s4MariaTalkToOliver() {
     // play sound: mariaWouldYouRather
     document.getElementById("maria_would_you_rather").play();
     // sound: “mariaWouldYouRather” is done
-    document.getElementById("maria_would_you_rather").onended = function () {
-        setTimeout("s4FadeToBlack()", 1000);
+    checkPlayerS4();
+}
+
+function checkPlayerS4() {
+    console.log("checkPlayer");
+    // CheckVariable
+    if (player == "oliver") {
+        document.getElementById("maria_would_you_rather").onended = function () {
+            setTimeout("s4FadeToBlack()", 1000);
+        }
+
+    } else if (player == "maria") {
+        document.getElementById("maria_would_you_rather").onended = function () {
+            setTimeout("s7OliverToMaria()", 1000);
+        }
+    } else {
+        alert("Noget gik galt prøv igen");
     }
 }
+
 
 function s4FadeToBlack() {
     console.log("s4FadeToBlack");
@@ -445,8 +468,11 @@ function v2_2bFadeToBlack() {
 // Anim: “fadeToBlack” is done
 function s5MariaToOliver() {
     console.log("s5MariaToOliver");
+    //remove v3
+    choice_text_container_v3.classList.add("hide");
+
     // Stop sound: choiceSound
-    document.getElementById("choiceSound").pause();
+    choice_sound.pause();
     // clean-up
     choice_text_container_v2.classList.add("hide");
     // maria_container_s1.remove("hide");
@@ -468,7 +494,9 @@ function s5MariaToOliver() {
     // fade sound: partySound
     // Anim: “mariaWalkToOliver” is done
     document.querySelector(".maria_walk_into_kitchen").addEventListener("webkitAnimationEnd", s5MariaTalk);
-
+    // clean-up
+    choice_a.removeEventListener("click", s4OliverToMaria);
+    choice_b.removeEventListener("click", s5MariaToOliver);
 
 }
 
@@ -510,6 +538,8 @@ function s5FadeToBlack() {
     oliver_container_s2.classList.add("hide");
     maria_container_s5.classList.add("hide");
     sif_container_s2.classList.add("hide");
+
+
     // Stop anim: sifTalkcycle
     sif_sprite_s2.classList.remove("sif_talkcycle");
     // Start anim: fadeToBlack
@@ -517,12 +547,11 @@ function s5FadeToBlack() {
     checkPlayers5();
 }
 function checkPlayers5() {
-    console.log("checkPlayer");
+    console.log("checkPlayers5");
     // CheckVariable
     if (player == "maria") {
         v6();
     } else if (player == "oliver") {
-        // setTimeout("s3()", 1500);
         v5();
     } else {
         alert("Noget gik galt prøv igen");
@@ -536,7 +565,7 @@ function v5() {
     // Start anim: 5a
     // Start anim: 5b
     // play sound: choiceSound
-    document.getElementById("choiceSound").play();
+    choice_sound.play();
 
     // on choice
     //  choice_a.addEventListener("click", s10);
@@ -546,32 +575,66 @@ function v5() {
 function s3() {
     console.log("s3");
     // Start anim: fadeUpFromBlack
-    // Start sound: partySound
+    // set scene
+    livingroom.classList.remove("hide");
+    door.classList.remove("hide");
+    maria_container_s1.classList.remove("hide");
+    maria_container_s1.classList.add("maria_start_pos");
     // Start anim: bgDancecycle
+    dance_people_container.classList.remove("hide");
+    // Start sound: partySound
+    private_party.play();
+    private_party.volume = 0.5;
+    // sound: “partySound” has played for 3 sec
+    setTimeout("s3MariaWaiting()", 1500);
+
 }
 
-// sound: “partySound” has played for 3 sec
 function s3MariaWaiting() {
     console.log("s3MariaWaiting");
     // Start anim: clockTick
     // play sound: clock
+    clock.play();
+    // sound: “clock” has played for 5 sec
+    setTimeout("s3FadeToBlack()", 5000);
 }
 
-// sound: “clock” has played for 5 sec
 function s3FadeToBlack() {
     console.log("s3FadeToBlack");
-    // Start anim: fadeToBlack
+
+    // Stop anim: bgDancecycle
+    dance_people_container.classList.add("hide");
+    // Stop sound: partySound
+    private_party.pause();
+    // hide livingroom
+    livingroom.classList.add("hide");
+    door.classList.add("hide");
+    // hide Maria
+    maria_container_s1.classList.add("hide");
+    maria_container_s1.classList.remove("maria_start_pos")
+    // hide Oliver
+    oliver_container_s1.classList.add("hide");
+    oliver_sprite_s1.classList.remove("oliver_walkcycle");
+
     // Stop anim: clockTick
     // Stop sound: clock
+    clock.pause();
+    v3();
 }
 
-// anim: “fadeToBlack” has playde for 3 sec and playser=1b
 function v3() {
     console.log("v3");
+    // set scene
+    choice_text_container_v3.classList.remove("hide");
     // Start anim: fadeUpFromBlack
     // play sound: choiceSound
+    choice_sound.play();
     // Start anim: 3a
     // Start anim: 3b
+    // on choice
+    choice_c.addEventListener("click", s5MariaToOliver);
+
+    choice_d.addEventListener("click", s4OliverToMaria);
 }
 
 // onChoice 3a eller 3b
@@ -594,7 +657,7 @@ function v6() {
     // Start anim: 6a
     // Start anim: 6b
     // play sound: choiceSound
-    document.getElementById("choiceSound").play();
+    choice_sound.play();
 
     // on choice
     // choice_a.addEventListener("click", s12);
@@ -614,57 +677,46 @@ function v3_3bFadeToBlack() {
 // Anim: “fadeToBlack” is done
 function s7OliverToMaria() {
     console.log("s7OliverToMaria");
-    // Start sound: partySound
-    // fade sound: partySound
-    // Start anim: fadeUpFromBlack
-    // Start anim: OliverWalkToMaria
-    // Start anim: OliverWalkcycle
-}
-
-// Anim: “OliverWalkToMaria” is done
-function s7MariaTalk() {
-    console.log("s7MariaTalk");
-    // Stop anim: oliverWalkcycle
-    // Start anim: mariaTalkcycle
-    // play sound: mariaWhyWho
-}
-
-// sound: “mariaWhyWho” is done
-function s7OliverTalk() {
-    console.log("s7OliverTalk");
+    // remove v3
+    choice_text_container_v3.classList.add("hide");
+    choice_sound.pause();
+    private_party.volume = 0.03;
     // Stop anim: mariaTalkcycle
+    maria_sprite_s4.classList.remove("maria_talkcycle");
     // Start anim: oliverTalkcycle
-    // play sound: oliverChill
-}
-
-// sound: “oliverChill” is done
-function s7MariaTalkToOliver() {
-    console.log("s7MariaTalkToOliver");
-    // Stop anim: oliverTalkcycle
-    // Start anim: mariaTalkcycle
-    // play sound: mariaWouldYouRather
-}
-
-// sound: “mariaWouldYouRather” is done
-function s7OliverTalk2() {
-    console.log("s7OliverTalk2");
-    // Stop anim: mariaTalkcycle
-    // Start anim: oliverTalkcycle
+    oliver_sprite_s4.classList.add("oliver_talkcycle");
     // play sound: oliverJealous
+    document.getElementById("oliver_jealous").play();
+    // sound: oliver_jealous is done
+    document.getElementById("oliver_jealous").onended = function () {
+        setTimeout("s7FadeToBlack()", 1000);
+
+    }
 }
 
 // sound: “oliverJealous” is done
 function s7FadeToBlack() {
     console.log("s7FadeToBlack");
-    // Start anim: fadeToBlack
+    // hide scene
+    // hide livingroom
+    livingroom.classList.add("hide");
+    door.classList.add("hide");
+    oliver_container_s4.classList.add("hide");
+    maria_container_s4.classList.add("hide");
+    dance_people_container.classList.add("hide");
     // Stop anim: oliverTalkcycle
+    oliver_sprite_s4.classList.remove("oliver_talkcycle");
     // Stop sound: partySound
+    private_party.pause();
+    v7();
 }
 
 // anim: “fadeToBlack” has playded for 3 sec
 function v7() {
     console.log("v7");
+
     // Start anim: fadeUpFromBlack
+    choice_text_container_v7.classList.remove("hide");
     // Start anim: 7a
     // Start anim: 7b
     // play sound: choiceSound

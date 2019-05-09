@@ -184,36 +184,44 @@ h2 {
 }
 
 #choice_text_container_v2,
+#choice_text_container_v3,
 #choice_text_container_v4,
 #choice_text_container_v5,
-#choice_text_container_v6 {
+#choice_text_container_v6,
+#choice_text_container_v7 {
   width: var(--gamewidth);
   background-color: aqua;
 
 }
 #choice_text_container_v2 img,
+#choice_text_container_v3 img,
 #choice_text_container_v4 img,
 #choice_text_container_v5 img,
-#choice_text_container_v6 img {
+#choice_text_container_v6 img,
+#choice_text_container_v7 img {
 max-width: var(--gamewidth);
 position: relative;
 }
 
 #choice_text_container_v2 p,
+#choice_text_container_v3 p,
 #choice_text_container_v4 p,
 #choice_text_container_v5 p,
-#choice_text_container_v6 p {
+#choice_text_container_v6 p,
+#choice_text_container_v7 p {
   max-width: var(--gamewidth);
   position: absolute;
-  font-size: 1.8em;
+  font-size: 1.2em;
   }
 
   /* --------------- choices ---------------------- */
-.choice_a {
+.choice_a,
+.choice_c {
   top: 30px;
   left: 15px;
 }
-.choice_b {
+.choice_b,
+.choice_d {
   top: 190px;
   left: 15px;
 }
