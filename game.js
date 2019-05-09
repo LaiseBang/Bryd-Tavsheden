@@ -41,17 +41,31 @@ const choice_a = document.querySelector(".choice_a");
 const choice_b = document.querySelector(".choice_b");
 const choice_c = document.querySelector(".choice_c");
 const choice_d = document.querySelector(".choice_d");
-const clock = document.getElementById("clock");
+const clock_animation = document.querySelector("#clock_container");
 
 // sounds
+const clock = document.getElementById("clock");
 const private_party = document.querySelector("#private_party");
 const choice_sound = document.getElementById("choiceSound");
+
+//clock fetch
+document.addEventListener("DOMContentLoaded", getSvg);
+
+async function getSvg() {
+    let clock = await fetch("img/clock/ur.svg");
+    let clockSvg = await clock.text();
+
+    document.querySelector("#clock_container").innerHTML = clockSvg;
+    clock_animation.classList.add("hide");
+}
+
 
 // Siden er loadet
 window.addEventListener("DOMContentLoaded", intro);
 
 function intro() {
     intro_scene.addEventListener("click", frontpage);
+    clock_animation.classList.add("hide"); //keep
 }
 
 function frontpage() {
@@ -60,6 +74,7 @@ function frontpage() {
     document.getElementById("intro_music").play();
     // remove frontpage
     intro_scene.classList.add("hide");
+
 }
 
 // Remember player 1a or 1b
@@ -261,6 +276,7 @@ function s2kitchen() {
     document.querySelector(".oliver_walk_into_kitchen").removeEventListener("webkitAnimationEnd", s2kitchen);
 
 }
+
 function s2SifTalk() {
     console.log("s2SifTalk");
     // Stop anim: oliverTalkcycle
@@ -294,8 +310,9 @@ function s2Clock() {
     console.log("s2Clock");
     // play sound: clock
     clock.play();
-    // clock.playbackrate = 3.0;
+    //clock.playbackrate = 3.0;
     // Start anim: clockTick
+    clock_animation.classList.remove("hide");
     // sound: “clock” has playde for 5 sec
     setTimeout("s2FadeToBlack()", 5000);
 }
@@ -311,6 +328,7 @@ function s2FadeToBlack() {
     oliver_container_s2.classList.add("hide");
     // Start anim: fadeToBlack
     // Stop anim: clockTick
+    clock_animation.classList.add("hide");
     // Stop sound: clock
     clock.pause();
     // Stop sound: partySound
@@ -593,6 +611,7 @@ function s3() {
 function s3MariaWaiting() {
     console.log("s3MariaWaiting");
     // Start anim: clockTick
+    clock_animation.classList.remove("hide");
     // play sound: clock
     clock.play();
     // sound: “clock” has played for 5 sec
@@ -617,6 +636,7 @@ function s3FadeToBlack() {
     oliver_sprite_s1.classList.remove("oliver_walkcycle");
 
     // Stop anim: clockTick
+    clock_animation.classList.add("hide");
     // Stop sound: clock
     clock.pause();
     v3();
