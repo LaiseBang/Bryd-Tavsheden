@@ -167,6 +167,110 @@ h2 {
 	top: 0;
 }
 
+#schoolparty {
+	background-image: url(/img/backgrounds/school_party.png);
+	background-repeat: no-repeat;
+	background-size: 100%;
+	width: var(--gamewidth);
+	height: var(--gamewidth);
+	max-width: 800px;
+	overflow: hidden;
+	position: absolute;
+	top: 0;
+}
+#later_container {
+background-color: aqua;
+width: var(--gamewidth);
+	height: var(--gamewidth);
+	max-width: 800px;
+	overflow: hidden;
+	position: absolute;
+	top: 0;
+
+}
+.later_fade {
+	animation: text_fade_kf 5s 1 forwards;
+	animation-delay: 2s;
+}
+
+@keyframes text_fade_kf {
+	0% {
+		opacity: 1;
+	}
+
+	100% {
+		opacity: 0;
+	}
+}
+
+/* --------- s9 smokingarea -------------- */
+
+#light_blue {
+	background-image: url(/img/backgrounds/blå_lys.svg);	
+	background-repeat: no-repeat;
+	background-size: 100%;
+	width: var(--gamewidth);
+	height: var(--gamewidth);
+	max-width: 800px;
+	overflow: hidden;
+	position: absolute;
+	top: -86px;
+	left: -25px;
+	transform: scale(0.4);
+
+}
+#light_green {
+	background-image: url(/img/backgrounds/grøn_lys.svg);	
+	background-repeat: no-repeat;
+	background-size: 100%;
+	width: var(--gamewidth);
+	height: var(--gamewidth);
+	max-width: 800px;
+	overflow: hidden;
+	position: absolute;
+	top: -86px;
+  left: -154px;
+  transform: scale(0.4);
+
+}
+#light_purple {
+	background-image: url(/img/backgrounds/lilla_lys.svg);	
+	background-repeat: no-repeat;
+	background-size: 100%;
+	width: var(--gamewidth);
+	height: var(--gamewidth);
+	max-width: 800px;
+	overflow: hidden;
+	position: absolute;
+	top: -86px;
+	left: -48px;
+	transform: scale(0.4);
+
+}
+#smokingarea_bg {
+	background-image: url(/img/backgrounds/rygergård_bg.png);	
+	background-repeat: no-repeat;
+	background-size: 100%;
+	width: var(--gamewidth);
+	height: var(--gamewidth);
+	max-width: 800px;
+	overflow: hidden;
+	position: absolute;
+}
+
+#smokingarea {
+	background-image: url(/img/backgrounds/rygergård.png);	
+	background-repeat: no-repeat;
+	background-size: 100%;
+	width: var(--gamewidth);
+	height: var(--gamewidth);
+	max-width: 800px;
+	overflow: hidden;
+	position: absolute;
+
+}
+
+
 #titlepage {
 	width: var(--gamewidth);
 	/* height: var(--gamewidth); */
@@ -193,7 +297,12 @@ h2 {
 #choice_text_container_v4,
 #choice_text_container_v5,
 #choice_text_container_v6,
-#choice_text_container_v7 {
+#choice_text_container_v7,
+#choice_text_container_v8,
+#choice_text_container_v9,
+#choice_text_container_v10,
+#choice_text_container_v11,
+#choice_text_container_v12 {
   width: var(--gamewidth);
   background-color: aqua;
 
@@ -204,9 +313,15 @@ h2 {
 #choice_text_container_v4 img,
 #choice_text_container_v5 img,
 #choice_text_container_v6 img,
-#choice_text_container_v7 img {
+#choice_text_container_v7 img,
+#choice_text_container_v8 img,
+#choice_text_container_v9 img,
+#choice_text_container_v10 img,
+#choice_text_container_v11 img,
+#choice_text_container_v12 img {
 max-width: var(--gamewidth);
 position: relative;
+z-index: 1000;
 }
 
 #choice_text_container_v2 p,
@@ -214,20 +329,25 @@ position: relative;
 #choice_text_container_v4 p,
 #choice_text_container_v5 p,
 #choice_text_container_v6 p,
-#choice_text_container_v7 p {
+#choice_text_container_v7 p,
+#choice_text_container_v8 p,
+#choice_text_container_v9 p,
+#choice_text_container_v10 p,
+#choice_text_container_v11 p,
+#choice_text_container_v12 p {
   max-width: var(--gamewidth);
   position: absolute;
   font-size: 1.2em;
   }
 
   /* --------------- choices ---------------------- */
-.choice_a,
-.choice_c {
+.text_a,
+.text_c {
   top: 30px;
   left: 15px;
 }
-.choice_b,
-.choice_d {
+.text_b,
+.text_d {
   top: 190px;
   left: 15px;
 }
@@ -250,7 +370,8 @@ position: relative;
 
 #oliver_container_s1,
 #oliver_container_s2,
-#oliver_container_s4 {
+#oliver_container_s4,
+#oliver_container_s9 {
     position: absolute;
     z-index: 4;
 }
@@ -262,7 +383,8 @@ position: relative;
 
 #oliver_sprite_s1,
 #oliver_sprite_s2,
-#oliver_sprite_s4 {
+#oliver_sprite_s4,
+#oliver_sprite_s9 {
     background-image: url(img/spritesheets/Oliver_spritesheet.svg);
     width: 60vw;
     height: 115vw;
@@ -419,6 +541,15 @@ position: relative;
 	top: 51px;
 }
 
+/* ------------- oliver s9 ------- */
+
+.oliver_start_pos_s9 {
+	left: 190px;
+	top: -18px;
+	transform: scale(0.5);
+	z-index: 0;
+}
+
 /* ---------------------- Maria -----------------------------*/
 
 #maria {
@@ -427,7 +558,9 @@ position: relative;
 
 #maria_container_s1,
 #maria_container_s4,
-#maria_container_s5 {
+#maria_container_s5,
+#maria_container_s9,
+#maria_container_s9_smoking {
   position: absolute;
   z-index: 4;
 }
@@ -437,9 +570,17 @@ position: relative;
 	top: 19%;
 }
 
+#maria_start_pos_s9_smoking {
+	left: 31%;
+	top: -4%;
+	transform: scale(0.7);
+}
+
 #maria_sprite_s1,
 #maria_sprite_s4, 
-#maria_sprite_s5 {
+#maria_sprite_s5,
+#maria_sprite_s9,
+#maria_sprite_s9_smoking {
   background-image: url(img/spritesheets/maria_spritesheet.svg);
   width: 48vw;
   height: 116vw;
@@ -528,10 +669,28 @@ position: relative;
 	z-index: 3;
 }
 
+#dance_people_container_s9 {
+	position: absolute;
+	z-index: 0;
+}
+
+
 .dance_people_start_pos {
 	left: 0%;
 	top: 10%;
 }
+.dance_people_start_pos_s9 {
+	left: -44%;
+	top: 10%;
+}
+
+/* .dance_people_start_pos_s9_smoking {
+	left: -44%;
+	top: -4%;
+	z-index: 0;
+	transform: scale(0.5);
+} */
+
 
 #dance_people_sprite {
 	background-image: url(img/spritesheets/dans.svg);
