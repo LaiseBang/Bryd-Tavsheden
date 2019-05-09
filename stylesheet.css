@@ -102,7 +102,7 @@ h2 {
   }
 }
 
-/* game */
+/* --------------- game ------------------ */
 
 #gamewrapper {
   width: var(--gamewidth);
@@ -184,19 +184,25 @@ h2 {
 }
 
 #choice_text_container_v2,
-#choice_text_container_v4 {
+#choice_text_container_v4,
+#choice_text_container_v5,
+#choice_text_container_v6 {
   width: var(--gamewidth);
   background-color: aqua;
 
 }
 #choice_text_container_v2 img,
-#choice_text_container_v4 img {
+#choice_text_container_v4 img,
+#choice_text_container_v5 img,
+#choice_text_container_v6 img {
 max-width: var(--gamewidth);
 position: relative;
 }
 
 #choice_text_container_v2 p,
-#choice_text_container_v4 p {
+#choice_text_container_v4 p,
+#choice_text_container_v5 p,
+#choice_text_container_v6 p {
   max-width: var(--gamewidth);
   position: absolute;
   font-size: 1.8em;
@@ -227,9 +233,9 @@ position: relative;
 
 /* -------------------------------- Oliver --------------------------- */
 
-#oliver_container,
-#oliver_container2,
-#oliver_container3 {
+#oliver_container_s1,
+#oliver_container_s2,
+#oliver_container_s4 {
     position: absolute;
     z-index: 4;
 }
@@ -239,9 +245,9 @@ position: relative;
     top: 19%;
 }
 
-#oliver_sprite,
-#oliver_sprite2,
-#oliver_sprite3 {
+#oliver_sprite_s1,
+#oliver_sprite_s2,
+#oliver_sprite_s4 {
     background-image: url(img/spritesheets/Oliver_spritesheet.svg);
     width: 60vw;
     height: 115vw;
@@ -395,9 +401,9 @@ position: relative;
   cursor: pointer;
 }
 
-#maria_container,
-#maria_container2,
-#maria_container3 {
+#maria_container_s1,
+#maria_container_s4,
+#maria_container_s5 {
   position: absolute;
   z-index: 4;
 }
@@ -406,9 +412,9 @@ position: relative;
   top: 19%;
 }
 
-#maria_sprite,
-#maria_sprite2, 
-#maria_sprite3 {
+#maria_sprite_s1,
+#maria_sprite_s4, 
+#maria_sprite_s5 {
   background-image: url(img/spritesheets/maria_spritesheet.svg);
   width: 48vw;
   height: 116vw;
@@ -453,7 +459,7 @@ position: relative;
 
 /* ------------ Sif -----------------*/
 
-#sif_container {
+#sif_container_s2 {
   position: absolute;
   z-index: 3;
 }
@@ -463,7 +469,7 @@ position: relative;
   top: 19%;
 }
 
-#sif_sprite {
+#sif_sprite_s2 {
   background-image: url(img/spritesheets/sifSpritesheet.svg);
   width: 39vw;
   height: 116vw;
