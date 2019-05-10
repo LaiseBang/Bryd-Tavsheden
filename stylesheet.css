@@ -373,6 +373,7 @@ z-index: 1000;
 #oliver_container_s4,
 #oliver_container_s9,
 #oliver_container_s10,
+#oliver_container_s11,
 #oliver_container_s21 {
     position: absolute;
     z-index: 4;
@@ -388,6 +389,7 @@ z-index: 1000;
 #oliver_sprite_s4,
 #oliver_sprite_s9,
 #oliver_sprite_s10,
+#oliver_sprite_s11,
 #oliver_sprite_s21 {
     background-image: url(img/spritesheets/Oliver_spritesheet.svg);
     width: 60vw;
@@ -554,6 +556,14 @@ z-index: 1000;
 	z-index: 0;
 }
 
+/* -------------- oliver s11 -------------- */
+
+.oliver_start_pos_s11 {
+	left: 47%;
+	top: 20%;
+	transform: scale(1);
+}
+
 /* ----------------oliver s21------------------- */
 
 .oliver_walks_to_maria_s21 {
@@ -590,6 +600,7 @@ z-index: 1000;
 #maria_container_s9,
 #maria_container_s9_smoking,
 #maria_container_s10,
+#maria_container_s11,
 #maria_container_s21 {
   position: absolute;
   z-index: 4;
@@ -619,6 +630,7 @@ z-index: 1000;
 #maria_sprite_s9,
 #maria_sprite_s9_smoking,
 #maria_sprite_s10,
+#maria_sprite_s11,
 #maria_sprite_s21 {
   background-image: url(img/spritesheets/maria_spritesheet.svg);
   width: 48vw;
@@ -685,11 +697,20 @@ z-index: 1000;
 	}
 }
 
+/* --------------- maria s11 -----------------*/
+
+.maria_start_pos_s11 {
+	left: 24%;
+	top: 20%;
+	transform: scale(1);
+}
+
 
 
 /* ------------ Sif -----------------*/
 
-#sif_container_s2 {
+#sif_container_s2,
+#sif_container_s11 {
   position: absolute;
   z-index: 3;
 }
@@ -699,7 +720,8 @@ z-index: 1000;
 	top: 19%;
 }
 
-#sif_sprite_s2 {
+#sif_sprite_s2,
+#sif_sprite_s11 {
   background-image: url(img/spritesheets/sifSpritesheet.svg);
   width: 39vw;
   height: 116vw;
@@ -721,6 +743,35 @@ z-index: 1000;
 
 	100% {
 		background-position: -500% 0%;
+	}
+}
+
+
+/* ----------------- sif s21 ------------------ */
+.sif_walk_out_of_kitchen {
+	animation-name: sif_walk_out_of_kitchen_kf;
+	animation-duration: 3s;
+	animation-iteration-count: 1;
+	animation-fill-mode: forwards;
+	animation-timing-function: ease;
+}
+
+@keyframes sif_walk_out_of_kitchen_kf {
+	0% {
+		left: 2%;
+		top: 19%;
+	}
+	
+	75% {
+		left: 50%;
+		top: -3%;
+		transform: scale(0.4)
+	}
+	
+	100% {
+		left: 90%;
+	top: -3%;
+	transform: scale(0.4);
 	}
 }
 
