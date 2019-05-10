@@ -371,7 +371,9 @@ z-index: 1000;
 #oliver_container_s1,
 #oliver_container_s2,
 #oliver_container_s4,
-#oliver_container_s9 {
+#oliver_container_s9,
+#oliver_container_s10,
+#oliver_container_s21 {
     position: absolute;
     z-index: 4;
 }
@@ -384,7 +386,9 @@ z-index: 1000;
 #oliver_sprite_s1,
 #oliver_sprite_s2,
 #oliver_sprite_s4,
-#oliver_sprite_s9 {
+#oliver_sprite_s9,
+#oliver_sprite_s10,
+#oliver_sprite_s21 {
     background-image: url(img/spritesheets/Oliver_spritesheet.svg);
     width: 60vw;
     height: 115vw;
@@ -550,6 +554,30 @@ z-index: 1000;
 	z-index: 0;
 }
 
+/* ----------------oliver s21------------------- */
+
+.oliver_walks_to_maria_s21 {
+	animation-name: oliver_walks_to_maria_s21_kf;
+	animation-duration: 1s;
+	animation-iteration-count: 1;
+	animation-fill-mode: forwards;
+	animation-timing-function: ease;
+}
+
+@keyframes oliver_walks_to_maria_s21_kf {
+	0% {
+	top: 56%;
+	left: 106%;
+	transform: scale(2.5);
+	}
+
+	100% {
+		top: 73%;
+    left: 47%;
+    transform: scale(2.5);
+	}
+}
+
 /* ---------------------- Maria -----------------------------*/
 
 #maria {
@@ -560,7 +588,9 @@ z-index: 1000;
 #maria_container_s4,
 #maria_container_s5,
 #maria_container_s9,
-#maria_container_s9_smoking {
+#maria_container_s9_smoking,
+#maria_container_s10,
+#maria_container_s21 {
   position: absolute;
   z-index: 4;
 }
@@ -576,11 +606,20 @@ z-index: 1000;
 	transform: scale(0.7);
 }
 
+.maria_start_pos_s21 {
+	left: -2%;
+	top: 80%;
+	transform: scale(2.5);
+}
+
+
 #maria_sprite_s1,
 #maria_sprite_s4, 
 #maria_sprite_s5,
 #maria_sprite_s9,
-#maria_sprite_s9_smoking {
+#maria_sprite_s9_smoking,
+#maria_sprite_s10,
+#maria_sprite_s21 {
   background-image: url(img/spritesheets/maria_spritesheet.svg);
   width: 48vw;
   height: 116vw;
@@ -623,6 +662,29 @@ z-index: 1000;
 		background-position: -900% -100%;
 	}
 }
+
+/* maria storms out */
+
+.maria_storms_out {
+	animation-name: maria_storms_out_kf;
+	animation-duration: 4s;
+	animation-iteration-count: 1;
+	animation-fill-mode: forwards;
+	animation-timing-function: ease;
+}
+
+@keyframes maria_storms_out_kf {
+	0% {
+		left: 5%;
+		top: 19%;
+	}
+
+	100% {
+		left: -37%;
+		top: 19%;
+	}
+}
+
 
 
 /* ------------ Sif -----------------*/
