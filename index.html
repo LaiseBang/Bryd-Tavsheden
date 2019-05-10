@@ -9,50 +9,6 @@
 	<link rel="stylesheet" href="stylesheet.css">
 
 	<style>
-		body {
-			display: grid;
-			grid-template-columns: 1fr;
-			grid-template-rows: auto;
-			grid-row-gap: 5vh;
-		}
-
-		#splash {
-			grid-row: 1/3;
-			height: 50vh;
-			overflow: hidden;
-		}
-
-		.text_intro {
-			grid-row: 3/4;
-			padding: 5px 30px;
-		}
-
-		#game {
-			grid-row: 4/7;
-
-			display: grid;
-			grid-template-columns: 1fr 2fr 1fr;
-			grid-template-rows: auto;
-		}
-
-		.headline_game {
-			grid-column: 2/3;
-			grid-row: 1/2;
-
-			margin: 3vh 0px;
-			text-align: center;
-		}
-
-		.iframe_game {
-			grid-column: 2/3;
-			grid-row: 2/3;
-		}
-
-		#game iframe {
-			width: 484px;
-			height: 384px;
-		}
-
 		#video {
 			grid-row: 7/9;
 		}
@@ -75,6 +31,56 @@
 			height: 384px;
 			margin-top: 10%;
 		}
+
+		#infographic {
+			grid-row: 9/11;
+			display: grid;
+			grid-template-rows: 1fr 2fr 1fr;
+			grid-template-columns: repeat(3, 1fr);
+		}
+
+		.headline_infographic {
+			grid-row: 1/2;
+			grid-column: 2/3;
+		}
+
+		.img_info {
+			grid-row: 2/3;
+			grid-column: 2/3;
+		}
+
+		.info_link {
+			grid-row: 3/4;
+			grid-column: 2/3;
+			align-self: end;
+		}
+
+		.info_btn {
+			display: inline-block;
+			height: 5rem;
+			width: 10rem;
+			padding: 0.46em 1.6em;
+			border: 0.1rem solid #b1b1b1;
+			margin: 0 0.2em 0.2em 0;
+			border-radius: 0.12em;
+			box-sizing: border-box;
+			text-decoration: none;
+			font-family: 'Roboto', sans-serif;
+			font-weight: 300;
+			font-size: 2rem;
+			color: #b1b1b1;
+			text-shadow: 0 0.04em 0.04em rgba(0, 0, 0, 0.35);
+			background-color: #FFFFFF;
+			text-align: center;
+			transition: all 0.15s;
+		}
+
+		.info_btn:hover {
+			text-shadow: 0 0 2em rgba(255, 255, 255, 1);
+			color: #000000;
+			border-color: #000000;
+		}
+
 
 		/*********screen width**************/
 
@@ -143,9 +149,12 @@
 			.wrapper_video {
 				grid-template-columns: 1fr 1fr;
 				grid-template-rows: auto;
+				grid-column-gap: 5vw;
 			}
 
 			.iframe_video {
+				width: 384px;
+				height: 284px;
 				padding: 5px;
 			}
 
@@ -174,6 +183,14 @@
 				grid-row: 3/4;
 			}
 
+			#infographic {
+				grid-area: infographic;
+			}
+
+			.headline_infographic {}
+
+			.img_info {}
+
 			nav {
 				max-height: 55px;
 			}
@@ -183,6 +200,7 @@
 				grid-template-rows: none;
 				grid-template-columns: 1fr 1fr 1fr 1fr;
 				top: 0;
+				height: 55px;
 			}
 
 			.navbar {
@@ -262,9 +280,12 @@
 			.wrapper_video {
 				grid-template-columns: 1fr 1fr;
 				grid-template-rows: auto;
+				grid-column-gap: 5vw;
 			}
 
 			.iframe_video {
+				width: 284px;
+				height: 184px;
 				padding: 5px;
 			}
 
@@ -293,6 +314,14 @@
 				grid-column: 1/2;
 				grid-row: 3/4;
 			}
+
+			#infographic {
+				grid-area: infographic;
+			}
+
+			.headline_infographic {}
+
+			.img_info {}
 
 		}
 
@@ -333,6 +362,59 @@
 				height: 634px;
 			}
 
+			#video {
+				grid-area: video;
+				grid-template-columns: auto;
+			}
+
+			.headline_video {
+				grid-column: 2/4;
+			}
+
+			.wrapper_video {
+				grid-template-columns: 1fr 1fr;
+				grid-template-rows: auto;
+				grid-column-gap: 5vw;
+			}
+
+			.iframe_video {
+				padding: 5px;
+			}
+
+			.video1 {
+				grid-column: 1/2;
+				grid-row: 1/2;
+			}
+
+			.video2 {
+				grid-column: 2/3;
+				grid-row: 1/2;
+			}
+
+			.video3 {
+				grid-column: 1/2;
+				grid-row: 2/3;
+			}
+
+			.video4 {
+				grid-column: 2/3;
+				grid-row: 2/3;
+			}
+
+			.video5 {
+				grid-column: 1/2;
+				grid-row: 3/4;
+			}
+
+			#infographic {
+				grid-area: infographic;
+			}
+
+			.headline_infographic {}
+
+			.img_info {}
+
+
 			nav {
 				max-height: 55px;
 			}
@@ -342,6 +424,7 @@
 				grid-template-rows: none;
 				grid-template-columns: 1fr 1fr 1fr 1fr;
 				top: 0;
+				height: 55px;
 			}
 
 			.navbar {
@@ -381,6 +464,7 @@
 @media screen and (-webkit-min-device-pixel-ratio: 2) and (min-width: 1025px),
 screen and (min-resolution: 192dpi) and (min-width: 1025px)
 */
+
 	</style>
 </head>
 
@@ -428,8 +512,28 @@ screen and (min-resolution: 192dpi) and (min-width: 1025px)
 		</div>
 	</section>
 
+	<section id="infographic">
+		<h3 class="headline_infographic">Infografik</h3>
+		<img class="img_info" src="img/splash/test.jpg" alt="" style="height: 200px; width: 400px;">
+		<a class="info_link" href="https://www.w3schools.com/w3css/tryit.asp?filename=tryw3css_buttons_all" target="_blank"><button class="info_btn">Link</button></a>
+	</section>
+
+	<footer id="footer">
+		<p class="footer_names">Created by:<br>Laise Bang Henriksen<br>Josefine Rasch</p>
+		<div id="footer_partner">
+			<p class="partner">In cooperation with of Bryd Tavsheden</p>
+			<img class="footer_logo" src="img/logo/bryd_tavsheden_logo.png" alt="bryd tavsheden - logo">
+		</div>
+		<div id="footer_semester">
+			<p class="semester">4.Semester</p>
+			<p class="copyright">2019</p>
+		</div>
+	</footer>
+
 
 
 	<script src="script.js"></script>
 
-</body></html>
+</body>
+
+</html>
