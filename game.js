@@ -6,11 +6,15 @@ const oliver_container_s1 = document.querySelector("#oliver_container_s1");
 const oliver_container_s2 = document.querySelector("#oliver_container_s2");
 const oliver_container_s4 = document.querySelector("#oliver_container_s4");
 const oliver_container_s9 = document.querySelector("#oliver_container_s9");
+const oliver_container_s10 = document.querySelector("#oliver_container_s10");
+const oliver_container_s21 = document.querySelector("#oliver_container_s21");
 const maria_container_s1 = document.querySelector("#maria_container_s1");
 const maria_container_s4 = document.querySelector("#maria_container_s4");
 const maria_container_s5 = document.querySelector("#maria_container_s5");
 const maria_container_s9 = document.querySelector("#maria_container_s9");
 const maria_container_s9_smoking = document.querySelector("#maria_container_s9_smoking");
+const maria_container_s10 = document.querySelector("#maria_container_s10");
+const maria_container_s21 = document.querySelector("#maria_container_s21");
 const sif_container_s2 = document.querySelector("#sif_container_s2");
 const dance_people_container = document.querySelector("#dance_people_container");
 
@@ -19,11 +23,15 @@ const oliver_sprite_s1 = document.querySelector("#oliver_sprite_s1");
 const oliver_sprite_s2 = document.querySelector("#oliver_sprite_s2");
 const oliver_sprite_s4 = document.querySelector("#oliver_sprite_s4");
 const oliver_sprite_s9 = document.querySelector("#oliver_sprite_s9");
+const oliver_sprite_s10 = document.querySelector("#oliver_sprite_s10");
+const oliver_sprite_s21 = document.querySelector("#oliver_sprite_s21");
 const maria_sprite_s1 = document.querySelector("#maria_sprite_s1");
 const maria_sprite_s4 = document.querySelector("#maria_sprite_s4");
 const maria_sprite_s5 = document.querySelector("#maria_sprite_s5");
 const maria_sprite_s9 = document.querySelector("#maria_sprite_s9");
 const maria_sprite_s9_smoking = document.querySelector("#maria_sprite_s9_smoking");
+const maria_sprite_s10 = document.querySelector("#maria_sprite_s10");
+const maria_sprite_s21 = document.querySelector("#maria_sprite_s21");
 const sif_sprite_s2 = document.querySelector("#sif_sprite_s2");
 const dance_people_sprite = document.querySelector("#dance_people_sprite");
 
@@ -782,8 +790,9 @@ function v7() {
 function s8() {
 
     console.log("s8");
-    // hide v4
+    // hide v4 andv9
     choice_text_container_v4.classList.add("hide");
+    choice_text_container_v9.classList.add("hide");
     // show sign schoolparty
     document.querySelector("#later_container").classList.remove("hide");
     document.querySelector("#later_container").classList.add("later_fade");
@@ -865,7 +874,79 @@ function v8() {
 
 function s10() {
     console.log("s10");
+    // clean-up v4 and v5
+    choice_text_container_v4.classList.add("hide");
+    choice_sound.pause();
+    choice_text_container_v5.classList.add("hide");
+    // set scene
+    livingroom.classList.remove("hide");
+    door.classList.remove("hide");
+    dance_people_container.classList.remove("hide");
+    oliver_container_s10.classList.remove("hide");
+    oliver_container_s10.classList.add("oliver_start_pos");
+    maria_container_s10.classList.remove("hide");
+    maria_sprite_s10.classList.add("maria_talkcycle");
+
+    document.querySelector("#maria_jealous").play();
+
+    // sound: maria_jealous is done
+    document.getElementById("maria_jealous").onended = function () {
+        setTimeout("s10OliverTalkes()", 1000);
+    };
+
 }
+function s10OliverTalkes() {
+    console.log("s10OliverTalkes");
+    maria_sprite_s10.classList.remove("maria_talkcycle");
+    oliver_sprite_s10.classList.add("oliver_talkcycle");
+    document.querySelector("#oliver_not_true").play();
+
+    // sound: oliver_not_true is done
+    document.getElementById("oliver_not_true").onended = function () {
+        setTimeout("s10MariaTalkes()", 1000);
+    };
+
+}
+
+function s10MariaTalkes() {
+    console.log("s10MariaTalkes");
+    maria_sprite_s10.classList.add("maria_talkcycle");
+    oliver_sprite_s10.classList.remove("oliver_talkcycle");
+    document.querySelector("#maria_grow_up").play();
+
+    // sound: maria_grow_up is done
+    document.getElementById("maria_grow_up").onended = function () {
+        setTimeout("s10MariaWalkesOut()", 1000);
+    };
+}
+function s10MariaWalkesOut() {
+    console.log("s10MariaWalkesOut");
+    maria_sprite_s10.classList.remove("maria_talkcycle");
+    maria_container_s10.classList.add("maria_storms_out");
+    maria_sprite_s10.classList.add("maria_walkcycle");
+    // Anim: maria_storms_outcycle is done
+    document.querySelector(".maria_storms_out").addEventListener("webkitAnimationEnd", v9);
+}
+
+function v9() {
+    console.log("v9")
+    // clean-up
+    livingroom.classList.add("hide");
+    door.classList.add("hide");
+    dance_people_container.classList.add("hide");
+    oliver_container_s10.classList.add("hide");
+    maria_container_s10.classList.add("hide");
+    // set scene
+    choice_text_container_v9.classList.remove("hide");
+
+    // play sound: choiceSound
+    choice_sound.play();
+
+    // on choice
+    choice_v9_a.addEventListener("click", s8);
+    choice_v9_b.addEventListener("click", s21);
+}
+
 
 function s11() {
     console.log("s11");
@@ -943,4 +1024,24 @@ function s19OliverTalks() {
     maria_sprite_s9_smoking.classList.remove("maria_talkcycle");
     oliver_sprite_s9.classList.add("oliver_talkcycle");
     document.getElementById("oliver_ok").play();
+}
+function s21() {
+    console.log("s21");
+    // clean-up
+    choice_text_container_v9.classList.add("hide");
+    choice_sound.pause();
+    // set scene
+    maria_container_s21.classList.remove("hide");
+    oliver_container_s21.classList.remove("hide");
+    oliver_container_s21.classList.add("oliver_walks_to_maria_s21");
+
+    // Anim: “oliverWalkToKitchen” is done
+    document.querySelector(".oliver_walks_to_maria_s21").addEventListener("webkitAnimationEnd", s21OliverTalks);
+
+}
+
+function s21OliverTalks() {
+    console.log("s21MariaTalk");
+    oliver_sprite_s21.classList.add("talkcycle");
+    document.querySelector("#oliver_sorry").play();
 }
