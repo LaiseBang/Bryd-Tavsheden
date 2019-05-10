@@ -1,0 +1,70 @@
+/* variabel that works on the whole document */
+:root {
+	--gamewidth: 100vw;
+}
+
+/* style for the whole document */
+* {
+	margin: 0;
+}
+
+#choice_text_container_v2,
+#choice_text_container_v3,
+#choice_text_container_v4,
+#choice_text_container_v5,
+#choice_text_container_v6,
+#choice_text_container_v7,
+#choice_text_container_v8,
+#choice_text_container_v9,
+#choice_text_container_v10,
+#choice_text_container_v11,
+#choice_text_container_v12 {
+	width: var(--gamewidth);
+	background-color: aqua;
+
+}
+
+#choice_text_container_v2 img,
+#choice_text_container_v3 img,
+#choice_text_container_v4 img,
+#choice_text_container_v5 img,
+#choice_text_container_v6 img,
+#choice_text_container_v7 img,
+#choice_text_container_v8 img,
+#choice_text_container_v9 img,
+#choice_text_container_v10 img,
+#choice_text_container_v11 img,
+#choice_text_container_v12 img {
+	max-width: var(--gamewidth);
+	position: relative;
+	z-index: 1000;
+}
+
+#choice_text_container_v2 p,
+#choice_text_container_v3 p,
+#choice_text_container_v4 p,
+#choice_text_container_v5 p,
+#choice_text_container_v6 p,
+#choice_text_container_v7 p,
+#choice_text_container_v8 p,
+#choice_text_container_v9 p,
+#choice_text_container_v10 p,
+#choice_text_container_v11 p,
+#choice_text_container_v12 p {
+	max-width: var(--gamewidth);
+	position: absolute;
+	font-size: 1.2em;
+}
+
+/* --------------- choices ---------------------- */
+.text_a,
+.text_c {
+	top: 30px;
+	left: 15px;
+}
+
+.text_b,
+.text_d {
+	top: 190px;
+	left: 15px;
+}
