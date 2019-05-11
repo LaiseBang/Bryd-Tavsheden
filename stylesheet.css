@@ -394,6 +394,7 @@ z-index: 1000;
 #oliver_container_s10,
 #oliver_container_s11,
 #oliver_container_s12,
+#oliver_container_s15,
 #oliver_container_s21 {
     position: absolute;
     z-index: 4;
@@ -418,6 +419,7 @@ z-index: 1000;
 #oliver_sprite_s10,
 #oliver_sprite_s11,
 #oliver_sprite_s12,
+#oliver_sprite_s15,
 #oliver_sprite_s21 {
     background-image: url(img/spritesheets/Oliver_spritesheet.svg);
     width: 60vw;
@@ -660,7 +662,13 @@ z-index: 1000;
 	}
 }
 
+/* ------------- oliver s15 ------------ */
 
+.oliver_start_pos_s15 {
+	left: 58%;
+    top: 1%;
+    transform: scale(0.8);
+}
 /* ----------------oliver s21------------------- */
 
 .oliver_walks_to_maria_s21 {
@@ -699,6 +707,7 @@ z-index: 1000;
 #maria_container_s10,
 #maria_container_s11,
 #maria_container_s12,
+#maria_container_s15,
 #maria_container_s21 {
   position: absolute;
   z-index: 4;
@@ -738,6 +747,7 @@ z-index: 1000;
 #maria_sprite_s10,
 #maria_sprite_s11,
 #maria_sprite_s12,
+#maria_sprite_s15,
 #maria_sprite_s21 {
   background-image: url(img/spritesheets/maria_spritesheet.svg);
   width: 48vw;
@@ -861,11 +871,22 @@ z-index: 1000;
 	}
 }
 
+
+/* ------------ maria s15 ----------------- */
+.maria_start_pos_s15 {
+	left: 40%;
+    top: 10%;
+    transform: scale(0.9);
+}
+
+
+
 /* ------------ Sif -----------------*/
 
 #sif_container_s2,
 #sif_container_s11,
-#sif_container_s12 {
+#sif_container_s12,
+#sif_container_s15 {
   position: absolute;
   z-index: 3;
 }
@@ -877,7 +898,8 @@ z-index: 1000;
 
 #sif_sprite_s2,
 #sif_sprite_s11,
-#sif_sprite_s12 {
+#sif_sprite_s12,
+#sif_sprite_s15 {
   background-image: url(img/spritesheets/sifSpritesheet.svg);
   width: 39vw;
   height: 116vw;
@@ -902,6 +924,12 @@ z-index: 1000;
 	}
 }
 
+/* --------------------- sif s15 ---------------- */
+.sif_start_pos_s15 {
+	left: 2%;
+	top: 9%;
+	transform: scale(0.9);
+}
 
 /* ----------------- sif s21 ------------------ */
 .sif_walk_out_of_kitchen {
@@ -928,6 +956,72 @@ z-index: 1000;
 		left: 90%;
 	top: -3%;
 	transform: scale(0.4);
+	}
+}
+
+/* ------------ William ---------------- */
+
+#william_container_s15 {
+  position: absolute;
+  z-index: 3;
+}
+
+.william_start_pos {
+	left: 2%;
+	top: 19%;
+}
+
+#william_sprite_s15 {
+  background-image: url(img/spritesheets/william_spritesheet.svg);
+  width: 39vw;
+  height: 116vw;
+  background-size: 100% 100%;
+}
+
+.william_walkcycle {
+	animation-name: william_walkcycle_kf;
+	animation-duration: 1s;
+	animation-iteration-count: infinite;
+	animation-timing-function: steps(1);
+	animation-fill-mode: both;
+}
+
+@keyframes william_walkcycle_kf {
+	0% {
+		background-position: 0% 0%;
+	}
+
+	100% {
+		background-position: 0% 0%;
+	}
+}
+/* ------------------ william s15 ---------- */
+.william_walk_into_kitchen {
+	animation-name: william_walk_into_kitchen_kf;
+	animation-duration: 3s;
+	animation-iteration-count: 1;
+	animation-fill-mode: forwards;
+	animation-timing-function: ease;
+}
+
+@keyframes william_walk_into_kitchen_kf {
+	0% {
+		left: 75%;
+		top: -3%;
+		transform: scale(0.4);
+	}
+
+	25% {
+		left: 50%;
+		top: -3%;
+		transform: scale(0.4)
+	}
+
+	100% {
+		left: 23%;
+    top: 24%;
+    transform: scale(1.5);
+
 	}
 }
 
