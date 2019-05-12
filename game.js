@@ -1475,6 +1475,110 @@ function s22() {
     console.log("s22");
 }
 
+
+function s23() {
+    console.log("s23");
+    // clean-up
+    choice_text_container_v11.classList.add("hide");
+    choice_sound.pause();
+
+    // set scene
+    kitchen.classList.remove("hide");
+    kitchen_front.classList.remove("hide");
+    oliver_container_s15.classList.remove("hide");
+    maria_container_s15.classList.remove("hide");
+    william_container_s15.classList.remove("hide");
+    william_container_s15.classList.remove("william_walk_into_kitchen");
+
+    oliver_sprite_s15.classList.add("oliver_talkcycle");
+    document.querySelector("#oliver_just_a_little").play();
+
+    document.getElementById("oliver_just_a_little").onended = function () {
+        setTimeout("s23OliverTalk()", 1000);
+    }
+}
+
+function s23OliverTalk() {
+    console.log("s23OliverTalk");
+
+    document.querySelector("#oliver_talk_at_home").play();
+
+    document.getElementById("oliver_talk_at_home").onended = function () {
+        setTimeout("s23MariaTalk()", 1000);
+    }
+}
+
+function s23MariaTalk() {
+    console.log("s23MariaTalk");
+    // clean-up
+    oliver_sprite_s15.classList.remove("oliver_talkcycle");
+    maria_sprite_s15.classList.add("maria_talkcycle");
+    document.querySelector("#maria_okay").play();
+
+    document.getElementById("maria_okay").onended = function () {
+        setTimeout("s23OliverMariaWalk()", 1000);
+    }
+}
+
+function s23OliverMariaWalk() {
+    console.log("s23OliverMariaWalk");
+    // clean-up
+    maria_sprite_s15.classList.remove("maria_talkcycle");
+
+    oliver_sprite_s12.classList.remove("oliver_talkcycle");
+    maria_container_s12.classList.add("maria_walk_out_of_kitchen");
+    oliver_container_s12.classList.add("oliver_walk_out_of_kitchen");
+
+    theEnd();
+}
+
+function s24() {
+    console.log("s24");
+    // clean-up
+    choice_text_container_v11.classList.add("hide");
+    choice_sound.pause();
+
+    // set scene
+    kitchen.classList.remove("hide");
+    kitchen_front.classList.remove("hide");
+    oliver_container_s15.classList.remove("hide");
+    maria_container_s15.classList.remove("hide");
+    william_container_s15.classList.remove("hide");
+    william_container_s15.classList.remove("william_walk_into_kitchen");
+
+
+    maria_sprite_s15.classList.add("maria_talkcycle");
+    document.querySelector("#maria_come_babe").play();
+
+    document.getElementById("maria_come_babe").onended = function () {
+        setTimeout("s24OliverTalk()", 1000);
+    }
+}
+
+function s24OliverTalk() {
+    console.log("s24OliverTalk");
+    maria_sprite_s15.classList.remove("maria_talkcycle");
+    document.querySelector("#oliver_yes").play();
+
+    document.getElementById("oliver_yes").onended = function () {
+        setTimeout("s24OliverMariaWalk()", 1000);
+    }
+
+}
+
+
+function s24OliverMariaWalk() {
+    console.log("s24OliverMariaWalk");
+    // clean-up
+    maria_sprite_s15.classList.remove("maria_talkcycle");
+    maria_container_s15.classList.add("maria_walk_out_of_kitchen");
+    oliver_container_s15.classList.add("oliver_walk_out_of_kitchen");
+
+    document.querySelector(".oliver_walk_out_of_kitchen").addEventListener("webkitAnimationEnd", theEnd);
+
+}
+
+
 function theEnd() {
     console.log("theEnd");
     // clean-up s11
@@ -1484,6 +1588,11 @@ function theEnd() {
     maria_container_s11.classList.add("hide");
     maria_container_s11.classList.add("maria_walk_into_kitchen");
     sif_container_s11.classList.add("hide");
+
+    // clean-up s15
+    oliver_container_s15.classList.add("hide");
+    maria_container_s15.classList.add("hide");
+    william_container_s15.classList.add("hide");
 
     // clean-up s18 og s19
     maria_container_s9_smoking.classList.add("hide");
@@ -1499,12 +1608,4 @@ function theEnd() {
     maria_container_s21.classList.add("hide");
     oliver_container_s21.classList.add("hide");
 
-}
-
-function s23() {
-    console.log("s23");
-}
-
-function s24() {
-    console.log("s24");
 }
