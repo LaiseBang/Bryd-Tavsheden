@@ -310,6 +310,41 @@ width: var(--gamewidth);
 	position: absolute;
 }
 
+/* ------------------ stills --------------- */
+#maria_hits_sif {
+	background-image: url(img/stills/maria_slap_sif.png);
+	background-repeat: no-repeat;
+	background-size: 100%;
+	width: var(--gamewidth);
+	height: var(--gamewidth);
+	max-width: 800px;
+	overflow: hidden;
+	position: absolute;
+}
+
+#sif_hits_maria {
+	background-image: url(img/stills/hair_pulling.png);
+	background-repeat: no-repeat;
+	background-size: 100%;
+	width: var(--gamewidth);
+	height: var(--gamewidth);
+	max-width: 800px;
+	overflow: hidden;
+	position: absolute;
+}
+
+#splitscreen {
+	background-image: url(img/stills/split_screen.png);
+	background-repeat: no-repeat;
+	background-size: 100%;
+	width: var(--gamewidth);
+	height: var(--gamewidth);
+	max-width: 800px;
+	overflow: hidden;
+	position: absolute;
+}
+
+/* --------------- choices ---------------------- */
 #choice_text_container_v2,
 #choice_text_container_v3,
 #choice_text_container_v4,
@@ -358,7 +393,6 @@ z-index: 1000;
   font-size: 1.2em;
   }
 
-  /* --------------- choices ---------------------- */
 .text_a,
 .text_c {
   top: 30px;
@@ -395,6 +429,7 @@ z-index: 1000;
 #oliver_container_s11,
 #oliver_container_s12,
 #oliver_container_s15,
+#oliver_container_s16,
 #oliver_container_s21 {
     position: absolute;
     z-index: 4;
@@ -420,6 +455,7 @@ z-index: 1000;
 #oliver_sprite_s11,
 #oliver_sprite_s12,
 #oliver_sprite_s15,
+#oliver_sprite_s16,
 #oliver_sprite_s21 {
     background-image: url(img/spritesheets/Oliver_spritesheet.svg);
     width: 60vw;
@@ -547,7 +583,7 @@ z-index: 1000;
 
 .oliver_walk_into_livingroom {
 	animation-name: oliver_walk_into_livingroom_kf;
-	animation-duration: 4s;
+	animation-duration: 3s;
 	animation-iteration-count: 1;
 	animation-fill-mode: forwards;
 	animation-timing-function: ease;
@@ -693,6 +729,29 @@ z-index: 1000;
 	}
 }
 
+/* ------------------ oliver s26 -------------------- */
+.oliver_storms_out {
+	animation-name: oliver_storms_out_kf;
+	animation-duration:3s;
+	animation-iteration-count: 1;
+	animation-fill-mode: forwards;
+	animation-timing-function: ease;
+}
+
+@keyframes oliver_storms_out_kf {
+	0% {
+		left: 45%;
+		top: 19%;
+	}
+
+	100% {
+		left: 100%;
+		top: 19%;
+	}
+}
+
+
+
 /* ---------------------- Maria -----------------------------*/
 
 #maria {
@@ -708,6 +767,8 @@ z-index: 1000;
 #maria_container_s11,
 #maria_container_s12,
 #maria_container_s15,
+#maria_container_s16,
+#maria_container_s17,
 #maria_container_s21 {
   position: absolute;
   z-index: 4;
@@ -748,6 +809,8 @@ z-index: 1000;
 #maria_sprite_s11,
 #maria_sprite_s12,
 #maria_sprite_s15,
+#maria_sprite_s16,
+#maria_sprite_s17,
 #maria_sprite_s21 {
   background-image: url(img/spritesheets/maria_spritesheet.svg);
   width: 48vw;
@@ -890,6 +953,9 @@ z-index: 1000;
   position: absolute;
   z-index: 3;
 }
+#sif_container_s15 {
+  z-index: 2;
+}
 
 .sif_start_pos {
 	left: 2%;
@@ -1005,14 +1071,14 @@ z-index: 1000;
 }
 
 @keyframes william_walk_into_kitchen_kf {
-	0% {
+	/* 0% {
 		left: 75%;
 		top: -3%;
 		transform: scale(0.4);
-	}
+	} */
 
-	25% {
-		left: 50%;
+	0% {
+		left: 40%;
 		top: -3%;
 		transform: scale(0.4)
 	}
