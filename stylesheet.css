@@ -144,10 +144,19 @@ nav {
 
 /*********************FOOTER**************************/
 #footer {
-	grid-area: footer;
+	grid-row: 11/12;
 	background-color: #333;
+	width: 100vw;
+	padding: 1rem 1rem;
+
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
 }
 
 .copyright:before {
 	content: "\00a9";
+}
+
+.footer_logo {
+	max-width: 200px;
 }
