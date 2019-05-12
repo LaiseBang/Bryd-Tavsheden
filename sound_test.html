@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title></title>
+	<link rel="stylesheet" href="">
+</head>
+
+<body>
+
+
+	<audio id="clock" src="sounds/foley/clock.wav" controls>
+		Your browser does not support the audio element.
+		<!-- Wall Clock Ticking.wav
+                credit - straget
+                link - https://freesound.org/people/straget/sounds/405423/
+                changes - sound was cut short -->
+	</audio>
+
+
+
+	<script>
+		let clock = document.getElementById("clock");
+
+		window.onload = function() {
+			console.log(clock);
+			document.getElementById("clock").playbackRate = 3.0; ///use this
+			//clock.play();
+		}
+	</script>
+</body></html>
