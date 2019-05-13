@@ -923,7 +923,8 @@ function v8() {
     document.querySelector("#smokingarea_bg").classList.add("hide");
     document.querySelector("#smokingarea").classList.add("hide");
     oliver_container_s9.classList.add("hide");
-    dance_people_container.classList.add("hide");
+    oliver_container_s9_smoking.classList.add("hide");
+    dance_people_container_s9.classList.add("hide");
     // set scene
     //add scene
     choice_text_container_v8.classList.remove("hide");
@@ -1161,9 +1162,9 @@ function s11OliverSlapBack() {
     maria_container_s11.classList.remove("hide");
     maria_sprite_s11.classList.add("maria_slap");
 
-    theEnd();
+    document.querySelector("#slap").play();
+    setTimeout("theEnd()", 2000);
 }
-
 
 function s12() {
     console.log("s12");
@@ -1526,7 +1527,7 @@ function s18() {
     maria_container_s9_smoking.classList.remove("hide");
     maria_container_s9_smoking.classList.add("maria_start_pos_s9_smoking");
     maria_sprite_s9_smoking.classList.add("maria_talkcycle");
-    oliver_container_s9.classList.remove("hide");
+    oliver_container_s9_smoking.classList.remove("hide");
     document.querySelector("#light_blue").classList.remove("hide");
     document.querySelector("#light_green").classList.remove("hide");
     document.querySelector("#light_purple").classList.remove("hide");
