@@ -88,28 +88,28 @@ const choice_text_container_v12 = document.querySelector("#choice_text_container
 
 
 // elements
-const choice_v2_a = document.querySelector(".choice_v2_a");
-const choice_v2_b = document.querySelector(".choice_v2_b");
-const choice_v3_a = document.querySelector(".choice_v3_a");
-const choice_v3_b = document.querySelector(".choice_v3_b");
-const choice_v4_a = document.querySelector(".choice_v4_a");
-const choice_v4_b = document.querySelector(".choice_v4_b");
-const choice_v5_a = document.querySelector(".choice_v5_a");
-const choice_v5_b = document.querySelector(".choice_v5_b");
-const choice_v6_a = document.querySelector(".choice_v6_a");
-const choice_v6_b = document.querySelector(".choice_v6_b");
-const choice_v7_a = document.querySelector(".choice_v7_a");
-const choice_v7_b = document.querySelector(".choice_v7_b");
-const choice_v8_a = document.querySelector(".choice_v8_a");
-const choice_v8_b = document.querySelector(".choice_v8_b");
-const choice_v9_a = document.querySelector(".choice_v9_a");
-const choice_v9_b = document.querySelector(".choice_v9_b");
-const choice_v10_a = document.querySelector(".choice_v10_a");
-const choice_v10_b = document.querySelector(".choice_v10_b");
-const choice_v11_a = document.querySelector(".choice_v11_a");
-const choice_v11_b = document.querySelector(".choice_v11_b");
-const choice_v12_a = document.querySelector(".choice_v12_a");
-const choice_v12_b = document.querySelector(".choice_v12_b");
+const choice_v2_a = document.querySelector("#choice_v2_a");
+const choice_v2_b = document.querySelector("#choice_v2_b");
+const choice_v3_a = document.querySelector("#choice_v3_a");
+const choice_v3_b = document.querySelector("#choice_v3_b");
+const choice_v4_a = document.querySelector("#choice_v4_a");
+const choice_v4_b = document.querySelector("#choice_v4_b");
+const choice_v5_a = document.querySelector("#choice_v5_a");
+const choice_v5_b = document.querySelector("#choice_v5_b");
+const choice_v6_a = document.querySelector("#choice_v6_a");
+const choice_v6_b = document.querySelector("#choice_v6_b");
+const choice_v7_a = document.querySelector("#choice_v7_a");
+const choice_v7_b = document.querySelector("#choice_v7_b");
+const choice_v8_a = document.querySelector("#choice_v8_a");
+const choice_v8_b = document.querySelector("#choice_v8_b");
+const choice_v9_a = document.querySelector("#choice_v9_a");
+const choice_v9_b = document.querySelector("#choice_v9_b");
+const choice_v10_a = document.querySelector("#choice_v10_a");
+const choice_v10_b = document.querySelector("#choice_v10_b");
+const choice_v11_a = document.querySelector("#choice_v11_a");
+const choice_v11_b = document.querySelector("#choice_v11_b");
+const choice_v12_a = document.querySelector("#choice_v12_a");
+const choice_v12_b = document.querySelector("#choice_v12_b");
 const clock_animation = document.querySelector("#clock_container");
 
 // sounds
@@ -357,29 +357,34 @@ function s2SifTalk() {
 
     // sound: “sifHejOliver” is done
     document.getElementById("sif_hey_oliver").onended = function () {
-        setTimeout("s2OliverTalk()", 1000);
-    }
-}
-
-function s2OliverTalk() {
-    console.log("s2OliverTalk");
-    // Stop anim: sifTalkcycle
-    sif_sprite_s2.classList.remove("sif_talkcycle");
-    // Start anim: oliverTalkcycle
-    oliver_sprite_s2.classList.add("oliver_talkcycle");
-    // play sound: oliverGirlfriend
-    document.getElementById("oliver_girlfriend").play();
-    // sound: “oliverGirlfriend” is done
-    document.getElementById("oliver_girlfriend").onended = function () {
         setTimeout("s2Clock()", 1000);
     }
 }
 
+// function s2OliverTalk() {
+//     console.log("s2OliverTalk");
+//     // Stop anim: sifTalkcycle
+//     sif_sprite_s2.classList.remove("sif_talkcycle");
+//     // Start anim: oliverTalkcycle
+//     oliver_sprite_s2.classList.add("oliver_talkcycle");
+//     // play sound: oliverGirlfriend
+//     document.getElementById("oliver_girlfriend").play();
+//     // sound: “oliverGirlfriend” is done
+//     document.getElementById("oliver_girlfriend").onended = function () {
+//         setTimeout("s2Clock()", 1000);
+//     }
+// }
+
 function s2Clock() {
     console.log("s2Clock");
+    // clean-up
+    // Stop anim: sifTalkcycle
+    sif_sprite_s2.classList.remove("sif_talkcycle");
+    // Start anim: oliverTalkcycle
+    oliver_sprite_s2.classList.add("oliver_talkcycle");
     // play sound: clock
     clock.play();
-    //clock.playbackrate = 3.0;
+    clock.playbackRate = 3.0;
     // Start anim: clockTick
     clock_animation.classList.remove("hide");
     // sound: “clock” has playde for 5 sec
@@ -680,6 +685,7 @@ function s3MariaWaiting() {
     clock_animation.classList.remove("hide");
     // play sound: clock
     clock.play();
+    clock.playbackRate = 3.0;
     // sound: “clock” has played for 5 sec
     setTimeout("s3FadeToBlack()", 5000);
 }
@@ -1256,6 +1262,7 @@ function s15SifHits() {
 
     // ADD IM SIF HIT MARIA
     document.querySelector("#sif_hits_maria").classList.remove("hide");
+    document.querySelector("#slap").play();
     setTimeout("s15WilliamWalk()", 2000);
 }
 
@@ -1276,7 +1283,7 @@ function s15WilliamWalk() {
     sif_container_s15.classList.add("sif_start_pos_s15");
     william_container_s15.classList.remove("hide");
     william_container_s15.classList.add("william_walk_into_kitchen");
-
+    document.querySelector("#william_stop").play();
     document.querySelector(".william_walk_into_kitchen").addEventListener("webkitAnimationEnd", s15SifTalk);
 
 }
@@ -1445,6 +1452,7 @@ function v12() {
     dance_people_container.classList.add("hide");
     oliver_container_s16.classList.add("hide");
     maria_container_s17.classList.add("hide");
+    maria_container_s16.classList.add("hide");
 
     // set scene
     choice_text_container_v12.classList.remove("hide");
@@ -1840,4 +1848,16 @@ function theEnd() {
     oliver_container_s16.classList.add("hide");
     maria_container_s16.classList.add("hide");
 
+    document.querySelector("#replay").classList.remove("hide");
+    document.querySelector("#play_again").addEventListener("click", reload)
 }
+
+function reload() {
+    location.reload();
+}
+
+// reload function fra tidligere spil i jQuery
+// function igen() {
+//     $("#replay").off("click", igen);
+//     location.reload();
+//   }
