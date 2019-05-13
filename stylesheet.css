@@ -2,6 +2,23 @@
 	margin: 0 auto;
 }
 
+h1,
+h3 {
+	font-family: 'Roboto', sans-serif;
+}
+
+p,
+a,
+button {
+	font-family: 'Montserrat', sans-serif;
+}
+
+
+/*
+font-family: 'Roboto', sans-serif;
+font-family: 'Montserrat', sans-serif;
+*/
+
 iframe {
 	border: none;
 
@@ -53,6 +70,76 @@ body {
 	height: 384px;
 }
 
+#video {
+	grid-row: 7/9;
+}
+
+.headline_video {
+	grid-row: 7/8;
+	margin: 3vh 0px;
+	text-align: center;
+}
+
+.wrapper_video {
+	grid-row: 8/9;
+
+	display: grid;
+
+}
+
+.iframe_video {
+	width: 484px;
+	height: 384px;
+	margin-top: 10%;
+}
+
+#infographic {
+	grid-row: 9/11;
+	display: grid;
+	grid-template-rows: 1fr 2fr 1fr;
+	grid-template-columns: repeat(3, 1fr);
+}
+
+.headline_infographic {
+	grid-row: 1/2;
+	grid-column: 2/3;
+}
+
+.img_info {
+	grid-row: 2/3;
+	grid-column: 2/3;
+}
+
+.info_link {
+	grid-row: 3/4;
+	grid-column: 2/3;
+	align-self: end;
+}
+
+.info_btn {
+	display: inline-block;
+	height: 5rem;
+	width: 10rem;
+	padding: 0.46em 1.6em;
+	border: 0.1rem solid #b1b1b1;
+	margin: 0 0.2em 0.2em 0;
+	border-radius: 0.12em;
+	box-sizing: border-box;
+	text-decoration: none;
+	font-weight: 300;
+	font-size: 2rem;
+	color: #b1b1b1;
+	text-shadow: 0 0.04em 0.04em rgba(0, 0, 0, 0.35);
+	background-color: #FFFFFF;
+	text-align: center;
+	transition: all 0.15s;
+}
+
+.info_btn:hover {
+	text-shadow: 0 0 2em rgba(255, 255, 255, 1);
+	color: #000000;
+	border-color: #000000;
+}
 
 
 
@@ -148,9 +235,14 @@ nav {
 	background-color: #333;
 	width: 100vw;
 	padding: 1rem 1rem;
+	text-align: center;
 
 	display: grid;
 	grid-template-columns: 1fr 1fr 1fr;
+}
+
+#footer p {
+	color: white;
 }
 
 .copyright:before {
@@ -159,4 +251,528 @@ nav {
 
 .footer_logo {
 	max-width: 200px;
+	margin-top: 0.5rem;
+}
+
+/*********************************************************/
+/*********screen width**************/
+
+/***********************MOBIL PORTRAIT*****************/
+@media screen and (min-width:375px) and (orientation:portrait) {
+	#splash {
+		height: 20vh;
+	}
+
+	#game iframe {
+		width: 370px;
+		height: 270px;
+	}
+
+	.iframe_video {
+		width: 370px;
+		height: 270px;
+		margin-top: 10%;
+	}
+}
+
+/*****************TABLET*******************/
+@media screen and (min-width:768px) and (max-width:1024px) and (orientation:landscape) {
+	body {
+		grid-template-columns: repeat(4, 1fr);
+		grid-template-areas: "splash splash splash splash"
+			". text text ."
+			"game game game game"
+			"video video video video"
+			"infographic infographic infographic infographic"
+			"footer footer footer footer";
+		grid-row-gap: 5vh;
+		grid-template-rows: auto 12vh auto auto;
+	}
+
+	#splash {
+		grid-area: splash;
+		height: 35vh;
+	}
+
+	.text_intro {
+		grid-area: text;
+		padding: 0px;
+		align-self: center;
+	}
+
+	#game {
+		grid-area: game;
+		grid-template-columns: auto;
+	}
+
+	#game iframe {
+		width: 484px;
+		height: 384px;
+	}
+
+	#video {
+		grid-area: video;
+		grid-template-columns: auto;
+	}
+
+	.headline_video {
+		grid-column: 2/4;
+	}
+
+	.wrapper_video {
+		grid-template-columns: 1fr 1fr;
+		grid-template-rows: auto;
+		grid-column-gap: 5vw;
+	}
+
+	.iframe_video {
+		width: 384px;
+		height: 284px;
+		padding: 5px;
+	}
+
+	.video1 {
+		grid-column: 1/2;
+		grid-row: 1/2;
+	}
+
+	.video2 {
+		grid-column: 2/3;
+		grid-row: 1/2;
+	}
+
+	.video3 {
+		grid-column: 1/2;
+		grid-row: 2/3;
+	}
+
+	.video4 {
+		grid-column: 2/3;
+		grid-row: 2/3;
+	}
+
+	.video5 {
+		grid-column: 1/2;
+		grid-row: 3/4;
+	}
+
+	#infographic {
+		grid-area: infographic;
+	}
+
+	.headline_infographic {}
+
+	.img_info {}
+
+	nav {
+		max-height: 55px;
+	}
+
+	#my_navbar {
+		overflow: hidden;
+		grid-template-rows: none;
+		grid-template-columns: 1fr 1fr 1fr 1fr;
+		top: 0;
+		height: 55px;
+	}
+
+	.navbar {
+		bottom: auto;
+	}
+
+
+	a.nav1 {
+		grid-column: 1/2;
+	}
+
+	a.nav2 {
+		grid-column: 2/3;
+	}
+
+	a.nav3 {
+		grid-column: 3/4;
+	}
+
+	a.nav4 {
+		grid-column: 4/5;
+	}
+
+	#burgermenu {
+		text-align: center;
+		margin-top: 10px;
+	}
+
+	.burger {
+		display: none;
+	}
+
+	#footer {
+		grid-area: footer;
+	}
+
+}
+
+@media screen and (min-width:668px) and (orientation:portrait) {
+	body {
+		grid-template-columns: repeat(4, 1fr);
+		grid-template-areas: "splash splash splash splash"
+			". text text ."
+			"game game game game"
+			"video video video video"
+			"infographic infographic infographic infographic"
+			"footer footer footer footer";
+		grid-row-gap: 3vh;
+		grid-template-rows: 23vh;
+	}
+
+	#splash {
+		height: 22vh;
+	}
+
+	.text_intro {
+		grid-area: text;
+		padding: 0px;
+	}
+
+	#game {
+		grid-area: game;
+
+		grid-template-columns: auto 2fr auto;
+	}
+
+	#game iframe {
+		width: 584px;
+		height: 484px;
+	}
+
+	#video {
+		grid-area: video;
+		grid-template-columns: auto;
+	}
+
+	.headline_video {
+		grid-column: 2/4;
+	}
+
+	.wrapper_video {
+		grid-template-columns: 1fr 1fr;
+		grid-template-rows: auto;
+		grid-column-gap: 5vw;
+	}
+
+	.iframe_video {
+		width: 284px;
+		height: 184px;
+		padding: 5px;
+	}
+
+
+	.video1 {
+		grid-column: 1/2;
+		grid-row: 1/2;
+	}
+
+	.video2 {
+		grid-column: 2/3;
+		grid-row: 1/2;
+	}
+
+	.video3 {
+		grid-column: 1/2;
+		grid-row: 2/3;
+	}
+
+	.video4 {
+		grid-column: 2/3;
+		grid-row: 2/3;
+	}
+
+	.video5 {
+		grid-column: 1/2;
+		grid-row: 3/4;
+	}
+
+	#infographic {
+		grid-area: infographic;
+	}
+
+	.headline_infographic {}
+
+	.img_info {}
+
+	#footer {
+		grid-area: footer;
+	}
+
+}
+
+/*******************DESKTOP*************************/
+@media screen and (min-width: 1025px) and (orientation: landscape) {
+
+	body {
+		grid-template-columns: repeat(4, 1fr);
+		grid-template-areas: "splash splash splash splash"
+			". text text ."
+			"game game game game"
+			"video video video video"
+			"infographic infographic infographic infographic"
+			"footer footer footer footer";
+		grid-row-gap: 10vh;
+		grid-template-rows: auto 15vh auto auto;
+	}
+
+	#splash {
+		grid-area: splash;
+	}
+
+	.text_intro {
+		grid-area: text;
+		padding: 0px;
+	}
+
+	#game {
+		grid-area: game;
+		grid-column: 2/4;
+		grid-template-columns: auto;
+	}
+
+	#game iframe {
+		width: 734px;
+		height: 634px;
+	}
+
+	#video {
+		grid-area: video;
+		grid-template-columns: auto;
+	}
+
+	.headline_video {
+		grid-column: 2/4;
+	}
+
+	.wrapper_video {
+		grid-template-columns: 1fr 1fr;
+		grid-template-rows: auto;
+		grid-column-gap: 5vw;
+	}
+
+	.iframe_video {
+		padding: 5px;
+	}
+
+	.video1 {
+		grid-column: 1/2;
+		grid-row: 1/2;
+	}
+
+	.video2 {
+		grid-column: 2/3;
+		grid-row: 1/2;
+	}
+
+	.video3 {
+		grid-column: 1/2;
+		grid-row: 2/3;
+	}
+
+	.video4 {
+		grid-column: 2/3;
+		grid-row: 2/3;
+	}
+
+	.video5 {
+		grid-column: 1/2;
+		grid-row: 3/4;
+	}
+
+	#infographic {
+		grid-area: infographic;
+	}
+
+	.headline_infographic {}
+
+	.img_info {}
+
+
+	nav {
+		max-height: 55px;
+	}
+
+	#my_navbar {
+		overflow: hidden;
+		grid-template-rows: none;
+		grid-template-columns: 1fr 1fr 1fr 1fr;
+		top: 0;
+		height: 55px;
+	}
+
+	.navbar {
+		bottom: auto;
+	}
+
+
+	a.nav1 {
+		grid-column: 1/2;
+	}
+
+	a.nav2 {
+		grid-column: 2/3;
+	}
+
+	a.nav3 {
+		grid-column: 3/4;
+	}
+
+	a.nav4 {
+		grid-column: 4/5;
+	}
+
+	#burgermenu {
+		text-align: center;
+		margin-top: 10px;
+	}
+
+	.burger {
+		display: none;
+	}
+
+	#footer {
+		grid-area: footer;
+	}
+}
+
+/************RETINA DESKTOP*****************/
+
+@media screen and (-webkit-min-device-pixel-ratio: 2) and (min-width: 1025px),
+screen and (min-resolution: 192dpi) and (min-width: 1025px) {
+	body {
+		grid-template-columns: repeat(4, 1fr);
+		grid-template-areas: "splash splash splash splash"
+			". text text ."
+			"game game game game"
+			"video video video video"
+			"infographic infographic infographic infographic"
+			"footer footer footer footer";
+		grid-row-gap: 10vh;
+		grid-template-rows: auto 15vh auto auto;
+	}
+
+	#splash {
+		grid-area: splash;
+	}
+
+	.text_intro {
+		grid-area: text;
+		padding: 0px;
+	}
+
+	#game {
+		grid-area: game;
+		grid-column: 2/4;
+		grid-template-columns: auto;
+	}
+
+	#game iframe {
+		width: 734px;
+		height: 634px;
+	}
+
+	#video {
+		grid-area: video;
+		grid-template-columns: auto;
+	}
+
+	.headline_video {
+		grid-column: 2/4;
+	}
+
+	.wrapper_video {
+		grid-template-columns: 1fr 1fr;
+		grid-template-rows: auto;
+		grid-column-gap: 5vw;
+	}
+
+	.iframe_video {
+		padding: 5px;
+	}
+
+	.video1 {
+		grid-column: 1/2;
+		grid-row: 1/2;
+	}
+
+	.video2 {
+		grid-column: 2/3;
+		grid-row: 1/2;
+	}
+
+	.video3 {
+		grid-column: 1/2;
+		grid-row: 2/3;
+	}
+
+	.video4 {
+		grid-column: 2/3;
+		grid-row: 2/3;
+	}
+
+	.video5 {
+		grid-column: 1/2;
+		grid-row: 3/4;
+	}
+
+	#infographic {
+		grid-area: infographic;
+	}
+
+	.headline_infographic {}
+
+	.img_info {}
+
+
+	nav {
+		max-height: 55px;
+	}
+
+	#my_navbar {
+		overflow: hidden;
+		grid-template-rows: none;
+		grid-template-columns: 1fr 1fr 1fr 1fr;
+		top: 0;
+		height: 55px;
+	}
+
+	.navbar {
+		bottom: auto;
+	}
+
+
+	a.nav1 {
+		grid-column: 1/2;
+	}
+
+	a.nav2 {
+		grid-column: 2/3;
+	}
+
+	a.nav3 {
+		grid-column: 3/4;
+	}
+
+	a.nav4 {
+		grid-column: 4/5;
+	}
+
+	#burgermenu {
+		text-align: center;
+		margin-top: 10px;
+	}
+
+	.burger {
+		display: none;
+	}
+
+	#footer {
+		grid-area: footer;
+	}
 }
