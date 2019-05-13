@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title></title>
+	<link rel="stylesheet" href="">
+
+	<style>
+		/* variabel that works on the whole document */
+		:root {
+			--gamewidth: 100vw;
+		}
+
+		#party_container {
+			background-color: black;
+			height: 100vh;
+
+			display: grid;
+
+		}
+
+		.party_later {
+			align-self: center;
+			text-align: center;
+			font-size: 2rem;
+			font-family: sans-serif;
+
+			animation: party_text 2s linear forwards;
+		}
+
+		@keyframes party_text {
+			from {
+				color: black;
+			}
+
+			to {
+				color: white;
+			}
+		}
+	</style>
+
+</head>
+
+<body>
+
+	<div id="party_container">
+		<p class="party_later">Senere til gymnasiefesten</p>
+	</div>
+
+
+
+
+	<script src=""></script>
+</body></html>
