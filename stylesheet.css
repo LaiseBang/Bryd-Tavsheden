@@ -24,7 +24,7 @@ iframe {
 
 }
 
-iframe:hover {}
+/* iframe:hover {} */
 
 body {
 	display: grid;
@@ -264,8 +264,8 @@ nav {
 	}
 
 	#game iframe {
-		width: 370px;
-		height: 270px;
+		width: 362px;
+		height: 362px;
 	}
 
 	.iframe_video {
@@ -360,9 +360,9 @@ nav {
 		grid-area: infographic;
 	}
 
-	.headline_infographic {}
+	/* .headline_infographic {} */
 
-	.img_info {}
+	/* .img_info {} */
 
 	nav {
 		max-height: 55px;
@@ -496,9 +496,9 @@ nav {
 		grid-area: infographic;
 	}
 
-	.headline_infographic {}
+	/* .headline_infographic {} */
 
-	.img_info {}
+	/* .img_info {} */
 
 	#footer {
 		grid-area: footer;
@@ -589,9 +589,9 @@ nav {
 		grid-area: infographic;
 	}
 
-	.headline_infographic {}
+	/* .headline_infographic {} */
 
-	.img_info {}
+	/* .img_info {} */
 
 
 	nav {
@@ -725,9 +725,9 @@ screen and (min-resolution: 192dpi) and (min-width: 1025px) {
 		grid-area: infographic;
 	}
 
-	.headline_infographic {}
+	/* .headline_infographic {} */
 
-	.img_info {}
+	/* .img_info {} */
 
 
 	nav {
