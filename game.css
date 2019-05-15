@@ -131,6 +131,27 @@ font-family: 'Montserrat', sans-serif;
 	position: absolute;
 }
 
+#prelude {
+	background-color: black;
+	height: 100vh;
+	width: var(--gamewidth);
+	height: var(--gamewidth);
+	max-width: 800px;
+	overflow: hidden;
+	position: absolute;
+	top: 0;
+	color: #ffffff;
+	padding: 7% 0 0 0;
+}
+
+.prelude_fade {
+	align-self: center;
+	text-align: center;
+	font-size: 2rem;
+	font-family: sans-serif;
+	animation: party_text 2s linear forwards;
+}
+
 #livingroom {
 	background-image: url(img/backgrounds/livingroom.png);
 	background-repeat: no-repeat;

@@ -131,16 +131,28 @@ async function getSvg() {
 window.addEventListener("DOMContentLoaded", intro);
 
 function intro() {
-    intro_scene.addEventListener("click", choosePlayer);
+    intro_scene.addEventListener("click", prelude);
     clock_animation.classList.add("hide"); //keep
+}
+
+function prelude() {
+    console.log("prelude");
+    // remove intro scene
+    intro_scene.classList.add("hide");
+
+    document.querySelector("#prelude").classList.remove("hide");
+    document.querySelector("#prelude").classList.add("prelude_fade");
+
+    setTimeout("choosePlayer()", 5000);
+    intro_scene.removeEventListener("click", prelude);
 }
 
 function choosePlayer() {
     console.log("choosePlayer");
     // Start sound: IntroMusic
     document.getElementById("intro_music").play();
-    // remove intro scene
-    intro_scene.classList.add("hide");
+
+    document.querySelector("#prelude").classList.add("hide");
 }
 
 // Remember player maria or oliver
@@ -156,12 +168,10 @@ function s1Party() {
     document.getElementById("intro_music").pause();
     // hide titlepage
     document.getElementById("titlepage").classList.add("hide");
-
     // Stop anim: oliverBobblehead
     document.getElementById("oliver").classList.remove("bounce");
     // Stop anim: mariaBobblehead
     document.getElementById("maria").classList.remove("bounce");
-
 
     // set scene
     livingroom.classList.remove("hide");
