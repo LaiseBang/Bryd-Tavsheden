@@ -28,6 +28,7 @@ h2 {
 .hide {
 	display: none;
 }
+
 p {
 	font-family: 'Montserrat', sans-serif;
 }
@@ -217,6 +218,7 @@ font-family: 'Montserrat', sans-serif;
 	position: absolute;
 	top: 0;
 }
+
 .later_fade {
 	align-self: center;
 	text-align: center;
@@ -224,10 +226,12 @@ font-family: 'Montserrat', sans-serif;
 	font-family: sans-serif;
 	animation: party_text 2s linear forwards;
 }
+
 @keyframes party_text {
 	from {
 		color: black;
 	}
+
 	to {
 		color: white;
 	}
@@ -290,7 +294,7 @@ width: var(--gamewidth);
 /* --------- s9 smokingarea -------------- */
 
 #light_blue {
-	background-image: url(img/backgrounds/blå_lys.svg);	
+	background-image: url(img/backgrounds/blå_lys.svg);
 	background-repeat: no-repeat;
 	background-size: 100%;
 	width: var(--gamewidth);
@@ -304,8 +308,9 @@ width: var(--gamewidth);
 	z-index: 360;
 
 }
+
 #light_green {
-	background-image: url(img/backgrounds/grøn_lys.svg);	
+	background-image: url(img/backgrounds/grøn_lys.svg);
 	background-repeat: no-repeat;
 	background-size: 100%;
 	width: var(--gamewidth);
@@ -314,13 +319,14 @@ width: var(--gamewidth);
 	overflow: hidden;
 	position: absolute;
 	top: -86px;
-  left: -154px;
+	left: -154px;
 	transform: scale(0.4);
 	z-index: 370;
 
 }
+
 #light_purple {
-	background-image: url(img/backgrounds/lilla_lys.svg);	
+	background-image: url(img/backgrounds/lilla_lys.svg);
 	background-repeat: no-repeat;
 	background-size: 100%;
 	width: var(--gamewidth);
@@ -333,8 +339,9 @@ width: var(--gamewidth);
 	transform: scale(0.4);
 	z-index: 380;
 }
+
 #smokingarea_bg {
-	background-image: url(img/backgrounds/rygergård_bg.png);	
+	background-image: url(img/backgrounds/rygergård_bg.png);
 	background-repeat: no-repeat;
 	background-size: 100%;
 	width: var(--gamewidth);
@@ -346,7 +353,7 @@ width: var(--gamewidth);
 }
 
 #smokingarea {
-	background-image: url(img/backgrounds/rygergård.png);	
+	background-image: url(img/backgrounds/rygergård.png);
 	background-repeat: no-repeat;
 	background-size: 100%;
 	width: var(--gamewidth);
@@ -511,6 +518,7 @@ z-index: 1000;
 
 	animation: pulse 2.5s infinite;
 	animation-timing-function: linear;
+
 }
 
 #choice_text_container_v2 img,
@@ -526,6 +534,8 @@ z-index: 1000;
 #choice_text_container_v12 img {
 	max-width: var(--gamewidth);
 	z-index: 1000;
+	box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.75);
+	/*keep*/
 
 	grid-column: 1/span 4;
 	grid-row: 1/span 4;
@@ -564,6 +574,7 @@ z-index: 1000;
 		transform: scale(0.8);
 	}
 }
+
 /* ---------------------- select character ----------------*/
 .player_text {
 	text-align: center;
@@ -591,9 +602,10 @@ z-index: 1000;
 #oliver_container_s15,
 #oliver_container_s16,
 #oliver_container_s21 {
-    position: absolute;
-    z-index: 4;
+	position: absolute;
+	z-index: 4;
 }
+
 #oliver_container_s9 {
 	z-index: 200;
 }
@@ -601,6 +613,7 @@ z-index: 1000;
 #oliver_container_s9_smoking {
 	z-index: 500;
 }
+
 .oliver_start_pos {
 	left: 45%;
 	top: 19%;
@@ -617,11 +630,11 @@ z-index: 1000;
 #oliver_sprite_s15,
 #oliver_sprite_s16,
 #oliver_sprite_s21 {
-    background-image: url(img/spritesheets/Oliver_spritesheet.svg);
-    width: 60vw;
-    height: 115vw;
-    background-size: 900% 500%;
-   
+	background-image: url(img/spritesheets/Oliver_spritesheet.svg);
+	width: 60vw;
+	height: 115vw;
+	background-size: 900% 500%;
+
 }
 
 /* ------------------- Oliver s1 -------------- */
@@ -844,17 +857,17 @@ z-index: 1000;
 		top: 20%;
 		transform: scale(1);
 	}
-	
+
 	75% {
 		left: 50%;
 		top: -3%;
 		transform: scale(0.4)
 	}
-	
+
 	100% {
 		left: 90%;
-	top: -3%;
-	transform: scale(0.4);
+		top: -3%;
+		transform: scale(0.4);
 	}
 }
 
@@ -862,9 +875,10 @@ z-index: 1000;
 
 .oliver_start_pos_s15 {
 	left: 58%;
-    top: 1%;
-    transform: scale(0.8);
+	top: 1%;
+	transform: scale(0.8);
 }
+
 /* ----------------oliver s21------------------- */
 
 .oliver_walks_to_maria_s21 {
@@ -877,22 +891,22 @@ z-index: 1000;
 
 @keyframes oliver_walks_to_maria_s21_kf {
 	0% {
-	top: 56%;
-	left: 106%;
-	transform: scale(2.5);
+		top: 56%;
+		left: 106%;
+		transform: scale(2.5);
 	}
 
 	100% {
 		top: 73%;
-    left: 47%;
-    transform: scale(2.5);
+		left: 47%;
+		transform: scale(2.5);
 	}
 }
 
 /* ------------------ oliver s26 -------------------- */
 .oliver_storms_out {
 	animation-name: oliver_storms_out_kf;
-	animation-duration:2s;
+	animation-duration: 2s;
 	animation-iteration-count: 1;
 	animation-fill-mode: forwards;
 	animation-timing-function: ease;
@@ -930,8 +944,8 @@ z-index: 1000;
 #maria_container_s16,
 #maria_container_s17,
 #maria_container_s21 {
-  position: absolute;
-  z-index: 4;
+	position: absolute;
+	z-index: 4;
 }
 
 #maria_container_s9 {
@@ -961,7 +975,7 @@ z-index: 1000;
 
 
 #maria_sprite_s1,
-#maria_sprite_s4, 
+#maria_sprite_s4,
 #maria_sprite_s5,
 #maria_sprite_s9,
 #maria_sprite_s9_smoking,
@@ -972,11 +986,11 @@ z-index: 1000;
 #maria_sprite_s16,
 #maria_sprite_s17,
 #maria_sprite_s21 {
-  background-image: url(img/spritesheets/maria_spritesheet.svg);
-  width: 48vw;
-  height: 116vw;
-  background-size: 900% 300%;
-  
+	background-image: url(img/spritesheets/maria_spritesheet.svg);
+	width: 48vw;
+	height: 116vw;
+	background-size: 900% 300%;
+
 }
 
 .maria_talkcycle {
@@ -1077,20 +1091,20 @@ z-index: 1000;
 @keyframes maria_walk_out_of_kitchen_kf {
 	0% {
 		left: 24%;
-	top: 20%;
-	transform: scale(1);
+		top: 20%;
+		transform: scale(1);
 	}
-	
+
 	75% {
 		left: 50%;
 		top: -3%;
 		transform: scale(0.4)
 	}
-	
+
 	100% {
 		left: 90%;
-	top: -3%;
-	transform: scale(0.4);
+		top: -3%;
+		transform: scale(0.4);
 	}
 }
 
@@ -1098,8 +1112,8 @@ z-index: 1000;
 /* ------------ maria s15 ----------------- */
 .maria_start_pos_s15 {
 	left: 40%;
-    top: 10%;
-    transform: scale(0.9);
+	top: 10%;
+	transform: scale(0.9);
 }
 
 
@@ -1110,11 +1124,12 @@ z-index: 1000;
 #sif_container_s11,
 #sif_container_s12,
 #sif_container_s15 {
-  position: absolute;
-  z-index: 3;
+	position: absolute;
+	z-index: 3;
 }
+
 #sif_container_s15 {
-  z-index: 2;
+	z-index: 2;
 }
 
 .sif_start_pos {
@@ -1126,10 +1141,10 @@ z-index: 1000;
 #sif_sprite_s11,
 #sif_sprite_s12,
 #sif_sprite_s15 {
-  background-image: url(img/spritesheets/sifSpritesheet.svg);
-  width: 39vw;
-  height: 116vw;
-  background-size: 500% 100%;
+	background-image: url(img/spritesheets/sifSpritesheet.svg);
+	width: 39vw;
+	height: 116vw;
+	background-size: 500% 100%;
 }
 
 .sif_talkcycle {
@@ -1171,25 +1186,25 @@ z-index: 1000;
 		left: 2%;
 		top: 19%;
 	}
-	
+
 	75% {
 		left: 50%;
 		top: -3%;
 		transform: scale(0.4)
 	}
-	
+
 	100% {
 		left: 90%;
-	top: -3%;
-	transform: scale(0.4);
+		top: -3%;
+		transform: scale(0.4);
 	}
 }
 
 /* ------------ William ---------------- */
 
 #william_container_s15 {
-  position: absolute;
-  z-index: 3;
+	position: absolute;
+	z-index: 3;
 }
 
 .william_start_pos {
@@ -1198,10 +1213,10 @@ z-index: 1000;
 }
 
 #william_sprite_s15 {
-  background-image: url(img/spritesheets/william_spritesheet.svg);
-  width: 39vw;
-  height: 116vw;
-  background-size: 100% 100%;
+	background-image: url(img/spritesheets/william_spritesheet.svg);
+	width: 39vw;
+	height: 116vw;
+	background-size: 100% 100%;
 }
 
 .william_walkcycle {
@@ -1221,6 +1236,7 @@ z-index: 1000;
 		background-position: 0% 0%;
 	}
 }
+
 /* ------------------ william s15 ---------- */
 .william_walk_into_kitchen {
 	animation-name: william_walk_into_kitchen_kf;
@@ -1282,17 +1298,18 @@ z-index: 1000;
 	left: 0%;
 	top: 10%;
 }
+
 .dance_people_start_pos_s9 {
 	left: -44%;
 	top: 10%;
 }
 
- .dance_people_start_pos_s9_smoking {
+.dance_people_start_pos_s9_smoking {
 	left: -44%;
 	top: -4%;
 	z-index: 0;
 	transform: scale(0.5);
-} 
+}
 
 
 #dance_people_sprite {
