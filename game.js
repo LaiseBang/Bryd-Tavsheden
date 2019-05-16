@@ -237,7 +237,7 @@ function prelude() {
     document.querySelector("#prelude").classList.remove("hide");
     document.querySelector("#prelude").classList.add("prelude_fade");
 
-    setTimeout("choosePlayer()", 1000);
+    setTimeout("choosePlayer()", 5000);
     intro_scene.removeEventListener("click", prelude);
 }
 
