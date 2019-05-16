@@ -116,6 +116,100 @@ const clock = document.getElementById("clock");
 const private_party = document.querySelector("#private_party");
 const choice_sound = document.getElementById("choiceSound");
 
+// dialogs up til s11
+const oliverBeerHandle = document.getElementById('oliver_beer');
+const MariaYesHandle = document.getElementById('maria_yes');
+const oliverHeySifHandle = document.getElementById('oliver_hey_sif');
+const sifHeyOliverHandle = document.getElementById('sif_hey_oliver');
+const mariaWhoHandle = document.getElementById('maria_who');
+const oliverChillHandle = document.getElementById('oliver_chill');
+const mariaWouldYouRatherHandle = document.getElementById('maria_would_you_rather');
+const mariaWhereHaveYouBeenHandle = document.getElementById('maria_where_have_you_been');
+const sifChillHandle = document.getElementById('sif_chill');
+const oliverJealousHandle = document.getElementById('oliver_jealous');
+const mariaNoSmokingHandle = document.getElementById('maria_no_smoking');
+const mariaEnoughHandle = document.getElementById('maria_enough');
+const mariaLetsGoHandle = document.getElementById('maria_lets_go_home');
+const oliverOkHandle = document.getElementById('oliver_ok');
+const mariaJealousHandle = document.getElementById('maria_jealous');
+const oliverNotTrueHandle = document.getElementById('oliver_not_true');
+const mariaGrowUpHandle = document.getElementById('maria_grow_up');
+const oliverSorryHandle = document.getElementById('oliver_sorry');
+const mariaBeWithYouHandle = document.getElementById('maria_be_with_you');
+const mariaGoSifHandle = document.getElementById('maria_go_sif');
+const mariaIDontSeeHandle = document.getElementById('maria_i_dont_see');
+const oliverSeeNothingHandle = document.getElementById('oliver_see_nothing');
+const mariaFlirtingHandle = document.getElementById('maria_flirting');
+const oliverNoFlirtingHandle = document.getElementById('oliver_no_fllirting');
+const mariaClothesHandle = document.getElementById('maria_clothes');
+const oliverClothesHandle = document.getElementById('oliver_clothes');
+const mariaBadBoyfriendHandle = document.getElementById('maria_bad_boyfriend');
+const slapHandle = document.getElementById('slap');
+
+
+
+// solution to problem with sound not playing at iPhones found at https://stackoverflow.com/questions/3009888/autoplay-audio-files-on-an-ipad-with-html5?fbclid=IwAR2m33nMW2lEgrfbYDfICAySwkjAzO5bRtmmxuv7DppoiO8-0rjzWKmKPts
+$(document).ready(function () {
+    addEventListener('touchstart', function (e) {
+        console.log("jQuery funktion")
+        oliverBeerHandle.play();
+        oliverBeerHandle.pause();
+        MariaYesHandle.play();
+        MariaYesHandle.pause();
+        oliverHeySifHandle.play();
+        oliverHeySifHandle.pause();
+        sifHeyOliverHandle.play();
+        sifHeyOliverHandle.pause();
+        private_party.play();
+        private_party.pause();
+        mariaWhoHandle.play();
+        mariaWhoHandle.pause();
+        mariaWouldYouRatherHandle.play();
+        mariaWouldYouRatherHandle.pause();
+        mariaWhereHaveYouBeenHandle.play();
+        mariaWhereHaveYouBeenHandle.pause();
+        sifChillHandle.play();
+        sifChillHandle.pause();
+        oliverJealousHandle.play();
+        oliverJealousHandle.pause();
+        mariaNoSmokingHandle.play();
+        mariaNoSmokingHandle.pause();
+        mariaEnoughHandle.play();
+        mariaEnoughHandle.pause();
+        mariaLetsGoHandle.play();
+        mariaLetsGoHandle.pause();
+        oliverOkHandle.play();
+        oliverOkHandle.pause();
+        mariaJealousHandle.play();
+        mariaJealousHandle.pause();
+        oliverNotTrueHandle.play();
+        oliverNotTrueHandle.pause();
+        mariaGrowUpHandle.play();
+        mariaGrowUpHandle.pause();
+        oliverSorryHandle.play();
+        oliverSorryHandle.pause();
+        mariaBeWithYouHandle.play();
+        mariaBeWithYouHandle.pause();
+        mariaGoSifHandle.play();
+        mariaGoSifHandle.pause();
+        mariaIDontSeeHandle.play();
+        mariaIDontSeeHandle.pause();
+        oliverSeeNothingHandle.play();
+        oliverSeeNothingHandle.pause();
+        mariaFlirtingHandle.play();
+        mariaFlirtingHandle.pause();
+        oliverNoFlirtingHandle.play();
+        oliverNoFlirtingHandle.pause();
+        mariaClothesHandle.play();
+        mariaClothesHandle.pause();
+        oliverClothesHandle.play();
+        oliverClothesHandle.pause();
+        mariaBadBoyfriendHandle.play();
+        mariaBadBoyfriendHandle.pause();
+        slapHandle.play();
+        slapHandle.pause();
+    });
+});
 
 //clock fetch
 document.addEventListener("DOMContentLoaded", getSvg);
@@ -143,7 +237,7 @@ function prelude() {
     document.querySelector("#prelude").classList.remove("hide");
     document.querySelector("#prelude").classList.add("prelude_fade");
 
-    setTimeout("choosePlayer()", 5000);
+    setTimeout("choosePlayer()", 1000);
     intro_scene.removeEventListener("click", prelude);
 }
 
@@ -164,13 +258,10 @@ function get_clicked_id(clicked_id) {
 
 function s1Party() {
     console.log("s1Party");
-    // Stop sound: IntroMusic
+    // clean-up
     document.getElementById("intro_music").pause();
-    // hide titlepage
     document.getElementById("titlepage").classList.add("hide");
-    // Stop anim: oliverBobblehead
     document.getElementById("oliver").classList.remove("bounce");
-    // Stop anim: mariaBobblehead
     document.getElementById("maria").classList.remove("bounce");
 
     // set scene
@@ -189,6 +280,7 @@ function s1Party() {
 
     setTimeout("s1OliverTalk()", 1500);
 }
+
 
 function s1OliverTalk() {
     console.log("s1OliverTalk");
@@ -249,7 +341,7 @@ function setKitchen() {
     // Stop anim: bgDancecycle
     dance_people_container.classList.add("hide");
     // Stop sound: partySound
-    private_party.pause();
+    // private_party.pause();
     // hide livingroom
     livingroom.classList.add("hide");
     door.classList.add("hide");
@@ -1453,7 +1545,6 @@ function s22() {
     choice_sound.pause();
 
     document.querySelector("#splitscreen").classList.remove("hide");
-    //  document.querySelector("#footstep_walking").play();
     document.querySelector("#wind").play();
 
     setTimeout("theEnd()", 5000);
@@ -1667,7 +1758,6 @@ function theEnd() {
 
     // clean-up s22
     document.querySelector("#splitscreen").classList.add("hide");
-    //document.querySelector("#footstep_walking").pause();
     document.querySelector("#wind").pause();
 
     // clean-up s25

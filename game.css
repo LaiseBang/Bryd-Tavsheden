@@ -1284,13 +1284,12 @@ z-index: 1000;
 		left: 23%;
     top: 18%;
     transform: scale(1.5);
-
 	}
 }
 
 /* ----------- shadow person ------------ */
 #shadow_container_s9 {
-	background-image: url(/img/stills/shadow_grey.png);
+	background-image: url(img/stills/shadow_grey.png);
 	position: absolute;
 	z-index: 400;
 	width: 48vw;
