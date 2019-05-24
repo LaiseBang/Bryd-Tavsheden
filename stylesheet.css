@@ -101,25 +101,36 @@ body {
 #infographic {
 	grid-row: 9/11;
 	display: grid;
-	grid-template-rows: 1fr 2fr 1fr;
+	grid-template-rows: auto 2fr auto;
 	grid-template-columns: repeat(3, 1fr);
+
+	margin: 70px 0;
 }
 
 .headline_infographic {
 	grid-row: 1/2;
 	grid-column: 2/3;
-	align-self: center;
+
+	margin: 50px 0;
+	text-align: center;
 }
 
 .img_info {
 	grid-row: 2/3;
 	grid-column: 2/3;
 	height: auto;
-	width: 100vw;
+	width: 90vw;
 }
 
-.info_link {
+.info_link_partner {
 	grid-row: 3/4;
+	grid-column: 2/3;
+	margin: 30px 0;
+	place-self: center;
+}
+
+.info_link_download {
+	grid-row: 4/5;
 	grid-column: 2/3;
 	align-self: center;
 }
@@ -397,15 +408,24 @@ nav {
 
 	#infographic {
 		grid-area: infographic;
-	}
-
-	.headline_infographic {
-		align-self: center;
+		margin: 150px 0;
 	}
 
 	.img_info {
-		width: 50vw;
+		width: 60vw;
+	}
 
+	.info_link {
+		justify-self: center;
+		margin: 50px 0;
+	}
+
+	.info_link_partner {
+		justify-self: start;
+	}
+
+	.info_link_download {
+		justify-self: end;
 	}
 
 	nav {
@@ -547,12 +567,29 @@ nav {
 
 	#infographic {
 		grid-area: infographic;
+		margin: 150px 0;
 	}
 
-	/* .headline_infographic {} */
+	.headline_infographic {
+		margin: 50px 0;
+		text-align: center;
+	}
 
 	.img_info {
-		width: 50vw;
+		width: 60vw;
+	}
+
+	.info_link {
+		justify-self: center;
+		margin: 50px 0;
+	}
+
+	.info_link_partner {
+		justify-self: start;
+	}
+
+	.info_link_download {
+		justify-self: end;
 	}
 
 	#footer {
@@ -645,7 +682,6 @@ nav {
 
 	#infographic {
 		grid-area: infographic;
-		grid-template-rows: auto 2fr auto;
 		margin: 150px 0;
 	}
 
