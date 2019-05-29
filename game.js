@@ -32,7 +32,6 @@ const dance_people_container = document.querySelector("#dance_people_container")
 const dance_people_container_s9 = document.querySelector("#dance_people_container_s9");
 const william_container_s15 = document.querySelector("#william_container_s15");
 
-
 // sprites
 const oliver_sprite_s1 = document.querySelector("#oliver_sprite_s1");
 const oliver_sprite_s2 = document.querySelector("#oliver_sprite_s2");
@@ -85,7 +84,6 @@ const choice_text_container_v10 = document.querySelector("#choice_text_container
 const choice_text_container_v11 = document.querySelector("#choice_text_container_v11");
 const choice_text_container_v12 = document.querySelector("#choice_text_container_v12");
 
-
 // elements
 const choice_v2_a = document.querySelector("#choice_v2_a");
 const choice_v2_b = document.querySelector("#choice_v2_b");
@@ -116,7 +114,7 @@ const clock = document.getElementById("clock");
 const private_party = document.querySelector("#private_party");
 const choice_sound = document.getElementById("choiceSound");
 
-// dialogs up til s11
+// dialogs 
 const oliverBeerHandle = document.getElementById('oliver_beer');
 const MariaYesHandle = document.getElementById('maria_yes');
 const oliverHeySifHandle = document.getElementById('oliver_hey_sif');
@@ -145,8 +143,32 @@ const mariaClothesHandle = document.getElementById('maria_clothes');
 const oliverClothesHandle = document.getElementById('oliver_clothes');
 const mariaBadBoyfriendHandle = document.getElementById('maria_bad_boyfriend');
 const slapHandle = document.getElementById('slap');
-
-
+const oliverBitchHandle = document.getElementById('oliver_bitch');
+const oliverNiceHandle = document.getElementById('oliver_nice');
+const oliverDeadFishHandle = document.getElementById('oliver_dead_fish');
+const williamStopHandle = document.getElementById('william_stop');
+const sifPsychoHandle = document.getElementById('sif_psycho');
+const mariaYourFaultHandle = document.getElementById('maria_your_fault');
+const williamDramaHandle = document.getElementById('william_drama');
+const mariaOliverStopHandle = document.getElementById('maria_oliver_stop');
+const williamControlHandle = document.getElementById('william_control');
+const oliverInLoveHandle = document.getElementById('oliver_in_love');
+const williamNotLoveHandle = document.getElementById('william_not_love');
+const oliverJustALittleHandle = document.getElementById('oliver_just_a_little');
+const oliverTalkAtHomeHandle = document.getElementById('oliver_talk_at_home');
+const mariaOkayHandle = document.getElementById('maria_okay');
+const mariaComeBabeHandle = document.getElementById('maria_come_babe');
+const oliverYesHandle = document.getElementById('oliver_yes');
+const oliverIToldYouHandle = document.getElementById('oliver_i_told_you');
+const mariaNotCoolHandle = document.getElementById('maria_not_cool');
+const oliverTalkingToSifHandle = document.getElementById('oliver_talking_to_sif');
+const oliverPromiseHandle = document.getElementById('oliver_promise');
+const oliverSorryBabeHandle = document.getElementById('oliver_sorry_babe');
+const mariaStopSeeingSifHandle = document.getElementById('maria_stop_seeing_sif');
+const oliverOldestFriendHandle = document.getElementById('oliver_oldest_friend');
+const oliverWontChooseHandle = document.getElementById('oliver_wont_choose');
+const mariaWhoMattersMoreHandle = document.getElementById('maria_who_matters_more');
+const oliverNoMoreHandle = document.getElementById('oliver_no_more');
 
 // solution to problem with sound not playing at iPhones found at https://stackoverflow.com/questions/3009888/autoplay-audio-files-on-an-ipad-with-html5?fbclid=IwAR2m33nMW2lEgrfbYDfICAySwkjAzO5bRtmmxuv7DppoiO8-0rjzWKmKPts
 $(document).ready(function () {
@@ -208,11 +230,99 @@ $(document).ready(function () {
         mariaBadBoyfriendHandle.pause();
         slapHandle.play();
         slapHandle.pause();
+        oliverBitchHandle.play();
+        oliverBitchHandle.pause();
+        oliverNiceHandle.play();
+        oliverNiceHandle.pause();
+        oliverDeadFishHandle.play();
+        oliverDeadFishHandle.pause();
+        williamStopHandle.play();
+        williamStopHandle.pause();
+        sifPsychoHandle.play();
+        sifPsychoHandle.pause();
+        mariaYourFaultHandle.play();
+        mariaYourFaultHandle.pause();
+        williamDramaHandle.play();
+        williamDramaHandle.pause();
+        mariaOliverStopHandle.play();
+        mariaOliverStopHandle.pause();
+        williamControlHandle.play();
+        williamControlHandle.pause();
+        oliverInLoveHandle.play();
+        oliverInLoveHandle.pause();
+        williamNotLoveHandle.play();
+        williamNotLoveHandle.pause();
+        oliverJustALittleHandle.play();
+        oliverJustALittleHandle.pause();
+        oliverTalkAtHomeHandle.play();
+        oliverTalkAtHomeHandle.pause();
+        mariaOkayHandle.play();
+        mariaOkayHandle.pause();
+        mariaComeBabeHandle.play();
+        mariaComeBabeHandle.pause();
+        oliverYesHandle.play();
+        oliverYesHandle.pause();
+        oliverIToldYouHandle.play();
+        oliverIToldYouHandle.pause();
+        mariaNotCoolHandle.play();
+        mariaNotCoolHandle.pause();
+        oliverTalkingToSifHandle.play();
+        oliverTalkingToSifHandle.pause();
+        oliverPromiseHandle.play();
+        oliverPromiseHandle.pause();
+        oliverSorryBabeHandle.play();
+        oliverSorryBabeHandle.pause();
+        mariaStopSeeingSifHandle.play();
+        mariaStopSeeingSifHandle.pause();
+        oliverOldestFriendHandle.play();
+        oliverOldestFriendHandle.pause();
+        oliverWontChooseHandle.play();
+        oliverWontChooseHandle.pause();
+        mariaWhoMattersMoreHandle.play();
+        mariaWhoMattersMoreHandle.pause();
+        oliverNoMoreHandle.play();
+        oliverNoMoreHandle.pause();
     });
 });
 
+
+// // Show loading animation.
+// var playPromise = oliverBeerHandle.play();
+
+// if (playPromise !== undefined) {
+//     playPromise.then(_ => {
+//         // Automatic playback started!
+//         // Show playing UI.
+//         // We can now safely pause video...
+//         oliverBeerHandle.pause();
+//         MariaYesHandle.pause();
+//         console.log("oliveBeer paused");
+//     })
+//         .catch(error => {
+//             // Auto-play was prevented
+//             // Show paused UI.
+//             console.log("Auto-play was prevented // Show paused UI.")
+//         });
+// }
+
+// let audioId = document.querySelector("#oliver_beer");
+
+// function scene1() {
+//     if (audioId.currentTime >= 0.2); {
+//         oliver_sprite_s1.classList.add("oliver_talkcycle");
+//         audioId.removeEventListener("timeupdate", scene1)
+//     }
+
+//     if (audioId.currentTime = 0.8); {
+//         oliver_sprite_s1.classList.remove("oliver_talkcycle");
+//         maria_sprite_s1.classList.add("maria_talkcycle");
+//         audioId.removeEventListener("timeupdate", scene1)
+//     }
+// }
+
 //clock fetch
 document.addEventListener("DOMContentLoaded", getSvg);
+window.addEventListener("DOMContentLoaded", intro);
 
 async function getSvg() {
     let clock = await fetch("img/clock/ur.svg");
@@ -222,7 +332,6 @@ async function getSvg() {
     clock_animation.classList.add("hide");
 }
 
-window.addEventListener("DOMContentLoaded", intro);
 
 function intro() {
     intro_scene.addEventListener("click", prelude);
@@ -274,7 +383,7 @@ function s1Party() {
 
     // Start sound: partySound
     private_party.play();
-    private_party.volume = 0.03;
+    //private_party.volume = 0.03;
 
     removeEventListener("click", s1Party);
 
@@ -361,7 +470,6 @@ function setKitchen() {
     // Start sound: partySound
     private_party.play();
     // fade sound: partySound
-    private_party.volume = 0.03;
     // Start anim: oliverWalkIntoKitchen
     oliver_container_s2.classList.add("oliver_walk_into_kitchen");
     // Start anim: oliverWalkcycle
@@ -460,7 +568,7 @@ function s4OliverToMaria() {
     dance_people_container.classList.remove("hide");
     // fade sound: partySound
     private_party.play();
-    private_party.volume = 0.03;
+    //  private_party.volume = 0.03;
     // Start anim: OliverWalkToMaria
     oliver_container_s4.classList.add("oliver_walk_into_livingroom");
     // Start anim: OliverWalkcycle
@@ -574,7 +682,7 @@ function s5MariaToOliver() {
     // Start sound: partySound
     private_party.play();
     // fade sound: partySound
-    private_party.volume = 0.03;
+    // private_party.volume = 0.03;
     // Anim: “mariaWalkToOliver” is done
     document.querySelector(".maria_walk_into_kitchen").addEventListener("webkitAnimationEnd", s5MariaTalk);
     // clean-up

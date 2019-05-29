@@ -65,11 +65,7 @@ font-family: 'Montserrat', sans-serif;
 } */
 
 .fade_up {
-	animation-name: fade_up_kf;
-	animation-duration: 1.5s;
-	animation-iteration-count: 1;
-	animation-timing-function: steps(100);
-	animation-fill-mode: forwards;
+	animation: fade_up_kf 1.5s steps(100) 0 1 forwards;
 	background-color: black;
 	z-index: 10000;
 }
@@ -103,12 +99,7 @@ font-family: 'Montserrat', sans-serif;
 
 /* --------------------titlepage---------------- */
 .bounce {
-	animation-name: bounce_kf;
-	animation-duration: 1s;
-	animation-iteration-count: infinite;
-	animation-timing-function: steps(2);
-	/* animation-fill-mode: both; */
-	/* transition-timing-function: cubic-bezier(.01,.93,.83,.67); */
+	animation: bounce_kf 1s steps(2) infinite;
 }
 
 @keyframes bounce_kf {
@@ -661,12 +652,7 @@ z-index: 1000;
 /* ------------------- Oliver s1 -------------- */
 
 .oliver_talkcycle {
-	animation-name: oliver_talkcycle_kf;
-	animation-duration: 1s;
-	animation-iteration-count: infinite;
-	animation-timing-function: steps(5);
-	animation-fill-mode: both;
-
+	animation: oliver_talkcycle_kf 1s steps(5) infinite both;
 }
 
 @keyframes oliver_talkcycle_kf {
@@ -680,11 +666,7 @@ z-index: 1000;
 }
 
 .oliver_walk_to_kitchen {
-	animation-name: oliver_walk_to_kitchen_kf;
-	animation-duration: 3s;
-	animation-iteration-count: 1;
-	animation-fill-mode: both;
-	animation-timing-function: ease;
+	animation: oliver_walk_to_kitchen_kf 3s ease 1 both;
 }
 
 @keyframes oliver_walk_to_kitchen_kf {
@@ -707,11 +689,7 @@ z-index: 1000;
 }
 
 .oliver_walkcycle {
-	animation-name: oliver_walkcycle_kf;
-	animation-duration: 1s;
-	animation-iteration-count: 4;
-	animation-timing-function: steps(9);
-	animation-fill-mode: both;
+	animation: oliver_walkcycle_kf 1s steps(9)  4  both;
 }
 
 @keyframes oliver_walkcycle_kf {
@@ -728,11 +706,7 @@ z-index: 1000;
 
 .oliver_walk_into_kitchen,
 .maria_walk_into_kitchen {
-	animation-name: oliver_walk_into_kitchen_kf;
-	animation-duration: 2s;
-	animation-iteration-count: 1;
-	animation-fill-mode: forwards;
-	animation-timing-function: ease;
+	animation: oliver_walk_into_kitchen_kf	2s ease 1 forwards;
 }
 
 @keyframes oliver_walk_into_kitchen_kf {
@@ -758,11 +732,7 @@ z-index: 1000;
 
 /* ------ oliver in s4 -------- */
 .oliver_walkcycle_right {
-	animation-name: oliver_walkcycle_right_kf;
-	animation-duration: 1s;
-	animation-iteration-count: 4;
-	animation-timing-function: steps(9);
-	animation-fill-mode: forwards;
+	animation: oliver_walkcycle_right_kf 1s steps(9)  4  forwards;
 }
 
 @keyframes oliver_walkcycle_right_kf {
@@ -776,11 +746,7 @@ z-index: 1000;
 }
 
 .oliver_walk_into_livingroom {
-	animation-name: oliver_walk_into_livingroom_kf;
-	animation-duration: 3s;
-	animation-iteration-count: 1;
-	animation-fill-mode: forwards;
-	animation-timing-function: ease;
+	animation: oliver_walk_into_livingroom_kf 3s ease  1  forwards;
 }
 
 @keyframes oliver_walk_into_livingroom_kf {
@@ -818,11 +784,7 @@ z-index: 1000;
 
 /* ------- oliver s9 smoking ----------- */
 .oliver_smoking {
-	animation-name: oliver_smoking_kf;
-	animation-duration: 2s;
-	animation-iteration-count: 1;
-	animation-timing-function: steps(1);
-	animation-fill-mode: forwards;
+	animation: oliver_smoking_kf 2 steps(1)  1  forwards;
 }
 
 @keyframes oliver_smoking_kf {
@@ -845,11 +807,7 @@ z-index: 1000;
 
 /* ------- oliver s11 slap ----------- */
 .oliver_slap {
-	animation-name: oliver_slap_kf;
-	animation-duration: 2s;
-	animation-iteration-count: 1;
-	animation-timing-function: steps(1);
-	animation-fill-mode: forwards;
+	animation: oliver_slap_kf 2s steps(1)  1  forwards;
 }
 
 @keyframes oliver_slap_kf {
@@ -865,11 +823,7 @@ z-index: 1000;
 /* -------- oliver s12 ----------- */
 
 .oliver_walk_out_of_kitchen {
-	animation-name: oliver_walk_out_of_kitchen_kf;
-	animation-duration: 2s;
-	animation-iteration-count: 1;
-	animation-fill-mode: forwards;
-	animation-timing-function: ease;
+	animation: oliver_walk_out_of_kitchen_kf 2s ease  1  forwards;
 }
 
 @keyframes oliver_walk_out_of_kitchen_kf {
@@ -903,11 +857,7 @@ z-index: 1000;
 /* ----------------oliver s21------------------- */
 
 .oliver_walks_to_maria_s21 {
-	animation-name: oliver_walks_to_maria_s21_kf;
-	animation-duration: 1s;
-	animation-iteration-count: 1;
-	animation-fill-mode: forwards;
-	animation-timing-function: ease;
+	animation: oliver_walks_to_maria_s21_kf 1s ease  1  forwards;
 }
 
 @keyframes oliver_walks_to_maria_s21_kf {
@@ -926,11 +876,7 @@ z-index: 1000;
 
 /* ------------------ oliver s26 -------------------- */
 .oliver_storms_out {
-	animation-name: oliver_storms_out_kf;
-	animation-duration: 2s;
-	animation-iteration-count: 1;
-	animation-fill-mode: forwards;
-	animation-timing-function: ease;
+	animation: oliver_storms_out_kf 2s ease  1  forwards;
 }
 
 @keyframes oliver_storms_out_kf {
@@ -1015,11 +961,7 @@ z-index: 1000;
 }
 
 .maria_talkcycle {
-	animation-name: maria_talkcycle_kf;
-	animation-duration: 1s;
-	animation-iteration-count: infinite;
-	animation-timing-function: steps(5);
-	animation-fill-mode: both;
+	animation: maria_talkcycle_kf 1s steps(5)  infinite  both;
 }
 
 @keyframes maria_talkcycle_kf {
@@ -1033,11 +975,7 @@ z-index: 1000;
 }
 
 .maria_walkcycle {
-	animation-name: maria_walkcycle_kf;
-	animation-duration: 1s;
-	animation-iteration-count: 4;
-	animation-timing-function: steps(9);
-	animation-fill-mode: both;
+	animation: maria_walkcycle_kf 1s steps(9)  4  both;
 }
 
 @keyframes maria_walkcycle_kf {
@@ -1053,11 +991,7 @@ z-index: 1000;
 /* maria storms out */
 
 .maria_storms_out {
-	animation-name: maria_storms_out_kf;
-	animation-duration: 2s;
-	animation-iteration-count: 1;
-	animation-fill-mode: forwards;
-	animation-timing-function: ease;
+	animation: maria_storms_out_kf 2s ease  1  forwards;
 }
 
 @keyframes maria_storms_out_kf {
@@ -1082,11 +1016,7 @@ z-index: 1000;
 
 /* ------- maria s11 slap ----------- */
 .maria_slap {
-	animation-name: maria_slap_kf;
-	animation-duration: 2s;
-	animation-iteration-count: 1;
-	animation-timing-function: steps(1);
-	animation-fill-mode: forwards;
+	animation: maria_slap_kf 2s steps(1)  1  forwards;
 }
 
 @keyframes maria_slap_kf {
@@ -1102,11 +1032,7 @@ z-index: 1000;
 /* -------- maria s12 ----------- */
 
 .maria_walk_out_of_kitchen {
-	animation-name: maria_walk_out_of_kitchen_kf;
-	animation-duration: 2s;
-	animation-iteration-count: 1;
-	animation-fill-mode: forwards;
-	animation-timing-function: ease;
+	animation: maria_walk_out_of_kitchen_kf 2s ease  1  forwards;
 }
 
 @keyframes maria_walk_out_of_kitchen_kf {
@@ -1169,11 +1095,7 @@ z-index: 1000;
 }
 
 .sif_talkcycle {
-	animation-name: sif_talkcycle_kf;
-	animation-duration: 1s;
-	animation-iteration-count: infinite;
-	animation-timing-function: steps(5);
-	animation-fill-mode: both;
+	animation: sif_talkcycle_kf 1s steps(5)  infinite  both;
 }
 
 @keyframes sif_talkcycle_kf {
@@ -1195,11 +1117,7 @@ z-index: 1000;
 
 /* ----------------- sif s21 ------------------ */
 .sif_walk_out_of_kitchen {
-	animation-name: sif_walk_out_of_kitchen_kf;
-	animation-duration: 1.5s;
-	animation-iteration-count: 1;
-	animation-fill-mode: forwards;
-	animation-timing-function: ease;
+	animation: sif_walk_out_of_kitchen_kf 1.5s ease  1  forwards;
 }
 
 @keyframes sif_walk_out_of_kitchen_kf {
@@ -1241,11 +1159,7 @@ z-index: 1000;
 }
 
 .william_walkcycle {
-	animation-name: william_walkcycle_kf;
-	animation-duration: 1s;
-	animation-iteration-count: infinite;
-	animation-timing-function: steps(1);
-	animation-fill-mode: both;
+	animation: william_walkcycle_kf 1s steps(1)  infinite  both;
 }
 
 @keyframes william_walkcycle_kf {
@@ -1260,11 +1174,7 @@ z-index: 1000;
 
 /* ------------------ william s15 ---------- */
 .william_walk_into_kitchen {
-	animation-name: william_walk_into_kitchen_kf;
-	animation-duration: 1.5s;
-	animation-iteration-count: 1;
-	animation-fill-mode: forwards;
-	animation-timing-function: ease;
+	animation: william_walk_into_kitchen_kf 1.5s ease  1  forwards;
 }
 
 @keyframes william_walk_into_kitchen_kf {
@@ -1332,7 +1242,8 @@ z-index: 1000;
 }
 
 
-#dance_people_sprite {
+#dance_people_sprite,
+#dance_people_sprite_s9 {
 	background-image: url(img/spritesheets/dans.svg);
 	width: 125vw;
 	height: 71vw;
@@ -1340,11 +1251,7 @@ z-index: 1000;
 }
 
 .dance_people_dancecycle {
-	animation-name: dance_people_talkcycle_kf;
-	animation-duration: 2s;
-	animation-iteration-count: infinite;
-	animation-timing-function: steps(6);
-	animation-fill-mode: both;
+	animation: dance_people_talkcycle_kf 2s steps(6)  infinite  both;
 }
 
 @keyframes dance_people_talkcycle_kf {
