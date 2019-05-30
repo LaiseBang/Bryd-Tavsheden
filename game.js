@@ -36,8 +36,8 @@ const william_container_s15 = document.querySelector("#william_container_s15");
 const oliver_sprite_s1 = document.querySelector("#oliver_sprite_s1");
 const oliver_sprite_s2 = document.querySelector("#oliver_sprite_s2");
 const oliver_sprite_s4 = document.querySelector("#oliver_sprite_s4");
-const oliver_sprite_s9 = document.querySelector("#oliver_sprite_s9_smoking");
-const oliver_sprite_s9_smoking = document.querySelector("#oliver_sprite_s9");
+const oliver_sprite_s9 = document.querySelector("#oliver_sprite_s9");
+const oliver_sprite_s9_smoking = document.querySelector("#oliver_sprite_s9_smoking");
 const oliver_sprite_s10 = document.querySelector("#oliver_sprite_s10");
 const oliver_sprite_s11 = document.querySelector("#oliver_sprite_s11");
 const oliver_sprite_s12 = document.querySelector("#oliver_sprite_s12");
@@ -344,7 +344,7 @@ function prelude() {
     intro_scene.classList.add("hide");
 
     document.querySelector("#prelude").classList.remove("hide");
-    document.querySelector("#prelude").classList.add("prelude_fade");
+    document.querySelector("#prelude_p").classList.add("prelude_fade");
 
     setTimeout("choosePlayer()", 5000);
     intro_scene.removeEventListener("click", prelude);
@@ -401,7 +401,7 @@ function s1OliverTalk() {
 
     // sound: “oliverBeer” is done
     document.getElementById("oliver_beer").onended = function () {
-        setTimeout("s1MariaTalk()", 1000);
+        setTimeout("s1MariaTalk()", 500);
     }
 }
 
@@ -415,7 +415,7 @@ function s1MariaTalk() {
     document.getElementById("maria_yes").play();
     // sound: “mariaYes” is done
     document.getElementById("maria_yes").onended = () => {
-        setTimeout("s1OliverWalk()", 1000);
+        setTimeout("s1OliverWalk()", 500);
     }
 }
 
@@ -488,7 +488,7 @@ function s2kitchen() {
     document.getElementById("oliver_hey_sif").play();
     // sound: “oliverHejSif” is done
     document.getElementById("oliver_hey_sif").onended = function () {
-        setTimeout("s2SifTalk()", 1000);
+        setTimeout("s2SifTalk()", 100);
     }
     // remove EventListener
     document.querySelector(".oliver_walk_into_kitchen").removeEventListener("webkitAnimationEnd", s2kitchen);
@@ -504,15 +504,14 @@ function s2SifTalk() {
     document.getElementById("sif_hey_oliver").play();
     // sound: “sifHejOliver” is done
     document.getElementById("sif_hey_oliver").onended = function () {
-        setTimeout("s2Clock()", 1000);
+        setTimeout("s2Clock()", 100);
     }
 }
 
 function s2Clock() {
     console.log("s2Clock");
     // clean-up
-    // Stop anim: sifTalkcycle
-    sif_sprite_s2.classList.remove("sif_talkcycle");
+
     // Start anim: oliverTalkcycle
     oliver_sprite_s2.classList.add("oliver_talkcycle");
     // play sound: clock
@@ -521,13 +520,17 @@ function s2Clock() {
     // Start anim: clockTick
     clock_animation.classList.remove("hide");
     // sound: “clock” has playde for 5 sec
-    setTimeout("s2FadeToBlack()", 5000);
+    setTimeout("v2()", 5000);
 }
 
-function s2FadeToBlack() {
-    console.log("s2FadeToBlack");
+function v2() {
+    console.log("v2");
+    // clean-up
     // Stop anim: oliverTalkcycle
     oliver_sprite_s2.classList.remove("oliver_talkcycle");
+    // Stop anim: sifTalkcycle
+    sif_sprite_s2.classList.remove("sif_talkcycle");
+
     // Hide kitchen
     kitchen.classList.add("hide");
     kitchen_front.classList.add("hide");
@@ -539,12 +542,7 @@ function s2FadeToBlack() {
     clock.pause();
     // Stop sound: partySound
     private_party.pause();
-    setTimeout("v2()", 50);
-}
 
-function v2() {
-    console.log("v2");
-    // clean-up
     // play sound: choiceSound
     choice_sound.play();
     // show choice_scene
@@ -649,6 +647,9 @@ function v4() {
     oliver_container_s4.classList.add("hide");
     maria_container_s4.classList.add("hide");
     dance_people_container.classList.add("hide");
+    // Stop sound: partySound
+    private_party.pause();
+
     //add scene
     choice_text_container_v4.classList.remove("hide");
     // choice sound
@@ -834,7 +835,7 @@ function s7OliverToMaria() {
     // clean-up
     choice_text_container_v3.classList.add("hide");
     choice_sound.pause();
-    private_party.volume = 0.03;
+    private_party.play();
     // Stop anim: mariaTalkcycle
     maria_sprite_s4.classList.remove("maria_talkcycle");
     // Start anim: oliverTalkcycle
@@ -876,11 +877,11 @@ function s8() {
     oliver_container_s12.classList.add("hide");
     sif_container_s12.classList.add("hide");
     maria_container_s12.classList.add("hide");
-
+    private_party.pause();
     oliver_sprite_s12.classList.add("oliver_talkcycle");
     // show sign schoolparty
     document.querySelector("#later_container").classList.remove("hide");
-    document.querySelector("#later_container").classList.add("later_fade");
+    document.querySelector("#later").classList.add("later_fade");
 
     // turn off sound choice
     choice_sound.pause();
@@ -893,13 +894,14 @@ function s9() {
     // clean-up
     document.querySelector("#later_container").classList.add("hide");
     // set scene
+    private_party.play();
     schoolparty.classList.remove("hide");
     document.querySelector("#party_bg").classList.remove("hide");
     dance_people_container_s9.classList.remove("hide");
     maria_container_s9.classList.remove("hide");
     maria_sprite_s9.classList.add("maria_talkcycle");
     oliver_container_s9.classList.remove("hide");
-    oliver_sprite_s9_smoking.classList.add("oliver_smoking");
+    oliver_sprite_s9.classList.add("oliver_smoking");
     document.querySelector("#shadow_container_s9").classList.remove("hide");
 
     setTimeout("s9NoSmoking()", 5000);
@@ -911,14 +913,14 @@ function s9NoSmoking() {
     document.querySelector("#party_bg").classList.add("hide");
     dance_people_container_s9.classList.remove("dance_people_start_pos_s9");
     dance_people_container_s9.classList.add("dance_people_start_pos_s9_smoking");
-    oliver_container_s9_smoking.classList.remove("hide");
-    oliver_sprite_s9_smoking.classList.remove("oliver_smoking");
     maria_container_s9.classList.add("hide");
     maria_sprite_s9.classList.remove("maria_talkcycle");
     dance_people_container.classList.add("hide");
     document.querySelector("#shadow_container_s9").classList.add("hide");
-
+    private_party.pause();
     // set scene
+    oliver_container_s9_smoking.classList.remove("hide");
+    oliver_sprite_s9_smoking.classList.add("oliver_smoking");
     maria_container_s9_smoking.classList.remove("hide");
     maria_container_s9_smoking.classList.add("maria_start_pos_s9_smoking");
     maria_sprite_s9_smoking.classList.add("maria_talkcycle");
@@ -995,9 +997,12 @@ function s10() {
     maria_sprite_s10.classList.add("maria_talkcycle");
     document.querySelector("#maria_jealous").play();
 
+    // start sound: partySound
+    private_party.play();
+
     // sound: maria_jealous is done
     document.getElementById("maria_jealous").onended = function () {
-        setTimeout("s10OliverTalkes()", 1000);
+        setTimeout("s10OliverTalkes()", 50);
     };
 
 }
@@ -1008,7 +1013,7 @@ function s10OliverTalkes() {
     document.querySelector("#oliver_not_true").play();
     // sound: oliver_not_true is done
     document.getElementById("oliver_not_true").onended = function () {
-        setTimeout("s10MariaTalkes()", 1000);
+        setTimeout("s10MariaTalkes()", 100);
     };
 
 }
@@ -1020,7 +1025,7 @@ function s10MariaTalkes() {
     document.querySelector("#maria_grow_up").play();
     // sound: maria_grow_up is done
     document.getElementById("maria_grow_up").onended = function () {
-        setTimeout("s10MariaWalkesOut()", 1000);
+        setTimeout("s10MariaWalkesOut()", 100);
     };
 }
 function s10MariaWalkesOut() {
@@ -1066,14 +1071,14 @@ function s11() {
     maria_container_s11.classList.remove("maria_walk_into_kitchen");
     maria_container_s11.classList.add("maria_start_pos_s11");
     sif_container_s11.classList.remove("hide");
-
+    private_party.play();
     // maria taks
     maria_sprite_s11.classList.add("maria_talkcycle");
     document.querySelector("#maria_go_sif").play();
 
     // sound: maria_go_sif is done
     document.getElementById("maria_go_sif").onended = function () {
-        setTimeout("s11SifWalkes()", 1000);
+        setTimeout("s11SifWalkes()", 500);
     };
 }
 
@@ -1095,7 +1100,7 @@ function s11MariaTalk() {
     document.querySelector("#maria_i_dont_see").play();
 
     document.getElementById("maria_i_dont_see").onended = function () {
-        setTimeout("s11OliverTalk()", 1000);
+        setTimeout("s11OliverTalk()", 500);
     };
 }
 
@@ -1107,7 +1112,7 @@ function s11OliverTalk() {
     oliver_sprite_s11.classList.add("oliver_talkcycle");
     document.querySelector("#oliver_see_nothing").play();
     document.getElementById("oliver_see_nothing").onended = function () {
-        setTimeout("s11MariaTalk2()", -1000);
+        setTimeout("s11MariaTalk2()", 10);
     };
 }
 
@@ -1118,7 +1123,7 @@ function s11MariaTalk2() {
 
     document.querySelector("#maria_flirting").play();
     document.getElementById("maria_flirting").onended = function () {
-        setTimeout("s11OliverTalk2()", 1000);
+        setTimeout("s11OliverTalk2()", 500);
     };
 }
 
@@ -1129,7 +1134,7 @@ function s11OliverTalk2() {
 
     document.querySelector("#oliver_no_fllirting").play();
     document.getElementById("oliver_no_fllirting").onended = function () {
-        setTimeout("s11MariaTalk3()", 1000);
+        setTimeout("s11MariaTalk3()", 500);
     };
 }
 
@@ -1140,7 +1145,7 @@ function s11MariaTalk3() {
 
     document.querySelector("#maria_clothes").play();
     document.getElementById("maria_clothes").onended = function () {
-        setTimeout("s11OliverTalk3()", 1000);
+        setTimeout("s11OliverTalk3()", 500);
     };
 }
 
@@ -1151,7 +1156,7 @@ function s11OliverTalk3() {
 
     document.querySelector("#oliver_clothes").play();
     document.getElementById("oliver_clothes").onended = function () {
-        setTimeout("s11MariaTalk4()", 1000);
+        setTimeout("s11MariaTalk4()", 500);
     };
 }
 
@@ -1163,7 +1168,7 @@ function s11MariaTalk4() {
 
     document.querySelector("#maria_bad_boyfriend").play();
     document.getElementById("maria_bad_boyfriend").onended = function () {
-        setTimeout("s11OliverTalk4()", 1000);
+        setTimeout("s11OliverTalk4()", 500);
     };
 }
 
@@ -1175,7 +1180,7 @@ function s11OliverTalk4() {
 
     document.querySelector("#oliver_bitch").play();
     document.getElementById("oliver_bitch").onended = function () {
-        setTimeout("s11MariaSlap()", 1000);
+        setTimeout("s11MariaSlap()", 500);
     };
 }
 
@@ -1195,6 +1200,8 @@ function s11OliverSlapBack() {
     console.log("s11OliverSlapBack");
     oliver_container_s11.classList.add("hide");
     maria_container_s11.classList.remove("hide");
+    maria_container_s11.classList.remove("maria_start_pos_s11");
+    maria_container_s11.classList.add("slap_pos");
     maria_sprite_s11.classList.add("maria_slap");
 
     document.querySelector("#slap").play();
@@ -1208,6 +1215,7 @@ function s12() {
     choice_text_container_v6.classList.add("hide");
     choice_sound.pause();
     // set scene
+    private_party.play();
     kitchen.classList.remove("hide");
     kitchen_front.classList.remove("hide");
     oliver_container_s12.classList.remove("hide");
@@ -1279,7 +1287,7 @@ function s15MariaHits() {
     // set scene
     kitchen.classList.remove("hide");
     kitchen_front.classList.remove("hide");
-
+    private_party.play();
     //ADD IMG OF MARIA HIT SIF
     document.querySelector("#maria_hits_sif").classList.remove("hide");
     document.querySelector("#slap").play();
@@ -1410,7 +1418,7 @@ function v11() {
     maria_container_s15.classList.add("hide");
     sif_container_s15.classList.add("hide");
     william_container_s15.classList.add("hide");
-
+    private_party.pause();
     // set scene
     choice_text_container_v11.classList.remove("hide");
 
@@ -1428,6 +1436,7 @@ function s16() {
     choice_text_container_v7.classList.add("hide");
     choice_sound.pause();
     // set scene
+    private_party.play();
     livingroom.classList.remove("hide");
     door.classList.remove("hide");
     dance_people_container.classList.remove("hide");
@@ -1476,7 +1485,7 @@ function v12() {
     oliver_container_s16.classList.add("hide");
     maria_container_s17.classList.add("hide");
     maria_container_s16.classList.add("hide");
-
+    private_party.pause();
     // set scene
     choice_text_container_v12.classList.remove("hide");
 
@@ -1495,6 +1504,7 @@ function s17() {
     choice_sound.pause();
 
     // set scene
+    private_party.play();
     livingroom.classList.remove("hide");
     door.classList.remove("hide");
     dance_people_container.classList.remove("hide");
@@ -1665,6 +1675,7 @@ function s23() {
     choice_sound.pause();
 
     // set scene
+    private_party.play();
     kitchen.classList.remove("hide");
     kitchen_front.classList.remove("hide");
     oliver_container_s15.classList.remove("hide");
@@ -1836,12 +1847,15 @@ function s26OliverWalk() {
 
 function theEnd() {
     console.log("theEnd");
+    // clean-up all
+    private_party.pause();
+
     // clean-up s11
     kitchen.classList.add("hide");
     kitchen_front.classList.add("hide");
     oliver_container_s11.classList.add("hide");
     maria_container_s11.classList.add("hide");
-    maria_container_s11.classList.add("maria_walk_into_kitchen");
+    //maria_container_s11.classList.add("maria_walk_into_kitchen");
     sif_container_s11.classList.add("hide");
 
     // clean-up s15
@@ -1874,6 +1888,8 @@ function theEnd() {
     dance_people_container.classList.add("hide");
     oliver_container_s16.classList.add("hide");
     maria_container_s16.classList.add("hide");
+
+    document.querySelector("#red_curtains").play();
     document.querySelector("#replay").classList.remove("hide");
     document.querySelector("#play_again").addEventListener("click", reload)
 }

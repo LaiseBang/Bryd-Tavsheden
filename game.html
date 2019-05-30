@@ -49,6 +49,13 @@
         <audio id="wind" src="sounds/foley/Ambience_Wind_With_Crickets_01.mp3">
             Your browser does not support the audio element.
         </audio>
+        <audio id="red_curtains" src="sounds/foley/red-curtains.mp3">
+            Your browser does not support the audio element.
+            <!--   credit Music by https://www.free-stock-music.com 
+                https://www.free-stock-music.com/red-curtains.html 
+            -->
+        </audio>
+
 
         <!-- Dialog -->
         <audio id="oliver_beer" src="sounds/dialog/oliverBeer.mp3">
@@ -301,7 +308,7 @@
 
         <!--  schoolparty -->
         <div id="later_container" class="hide">
-            <p class="later_fade">Senere til gymnasiefesten</p>
+            <p id="later" class="">Senere til gymnasiefesten</p>
         </div>
 
         <div id="party_bg" class="hide"></div>
@@ -484,20 +491,21 @@
         <div id="titlepage" class="">
             <h1 id="choose_player">Vælg spiller</h1>
             <p class="player_text">Maria</p>
-            <img id="maria" class="half_size bounce player" onClick="get_clicked_id(this.id)"
+            <img id="maria" class="bounce player" onClick="get_clicked_id(this.id)"
                 src="img/choice_img/mariaBobblehead.png" alt="Vælg spiller Maria">
             <p class="player_text">Oliver</p>
-            <img id="oliver" class="half_size bounce player" onClick="get_clicked_id(this.id)"
+            <img id="oliver" class="bounce player" onClick="get_clicked_id(this.id)"
                 src="img/choice_img/oliverBobblehead.png" alt="Vælg spiller Oliver">
         </div>
         <div id="prelude" class="hide">
-            <p class="prelude_fade">Kæresteparret Maria og Oliver skal til gymnasiefest. <br> <br> De starter til
+            <p id="prelude_p" class="">Kæresteparret Maria og Oliver skal til gymnasiefest. <br> <br> De
+                starter til
                 opvarmningsfest hjemme hos Olivers ven William.</p>
         </div>
 
         <div id="intro" class="">
-            <h1>Du fortjener bedre!</h1>
-            <h2>- et dilemmaspil om kærestevold</h2>
+            <h1>Du fortjener <span class="blue"> bedre</span></h1>
+            <p class="intro_center">- et dilemmaspil om kærestevold</p>
             <p id="startGame" class="">Start</p>
         </div>
         <!-- <div id="creditpage" class="creditpage_off"></div> -->
