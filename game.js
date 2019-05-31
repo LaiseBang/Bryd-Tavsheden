@@ -673,7 +673,7 @@ function s3() {
     dance_people_container.classList.remove("hide");
     // Start sound: partySound
     private_party.play();
-    private_party.volume = 0.5;
+    // private_party.volume = 0.5;
     // sound: “partySound” has played for 3 sec
     setTimeout("s3MariaWaiting()", 1500);
 
@@ -854,6 +854,7 @@ function s9() {
     maria_sprite_s9.classList.add("maria_talkcycle");
     oliver_container_s9.classList.remove("hide");
     oliver_sprite_s9_smoking.classList.add("oliver_smoking");
+    document.querySelector("#shadow_container_s9").classList.remove("hide");
 
     setTimeout("s9NoSmoking()", 5000);
 }
@@ -870,6 +871,8 @@ function s9NoSmoking() {
     maria_container_s9.classList.add("hide");
     maria_sprite_s9.classList.remove("maria_talkcycle");
     dance_people_container.classList.add("hide");
+    document.querySelector("#shadow_container_s9").classList.add("hide");
+
 
     // set scene
     maria_container_s9_smoking.classList.remove("hide");
@@ -1537,6 +1540,19 @@ function s18() {
     document.getElementById("maria_enough").play();
 
     document.getElementById("maria_enough").onended = function () {
+        setTimeout("s18OliverTalk()", 1000);
+    }
+}
+
+function s18OliverTalk() {
+    console.log("s18OliverTalk");
+    // clean-up
+    maria_sprite_s9_smoking.classList.remove("maria_talkcycle");
+    oliver_sprite_s9_smoking.classList.add("oliver_talkcycle");
+
+    document.getElementById("oliver_no_more").play();
+
+    document.getElementById("oliver_no_more").onended = function () {
         setTimeout("theEnd()", 1000);
     }
 }
@@ -1552,7 +1568,7 @@ function s19() {
     maria_container_s9_smoking.classList.remove("hide");
     maria_container_s9_smoking.classList.add("maria_start_pos_s9_smoking");
     maria_sprite_s9_smoking.classList.add("maria_talkcycle");
-    oliver_container_s9.classList.remove("hide");
+    oliver_container_s9_smoking.classList.remove("hide");
     document.querySelector("#light_blue").classList.remove("hide");
     document.querySelector("#light_green").classList.remove("hide");
     document.querySelector("#light_purple").classList.remove("hide");
@@ -1825,6 +1841,7 @@ function theEnd() {
     // clean-up s18 og s19
     maria_container_s9_smoking.classList.add("hide");
     oliver_container_s9.classList.add("hide");
+    oliver_container_s9_smoking.classList.add("hide");
     document.querySelector("#light_blue").classList.add("hide");
     document.querySelector("#light_green").classList.add("hide");
     document.querySelector("#light_purple").classList.add("hide");
