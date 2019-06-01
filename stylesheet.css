@@ -37,6 +37,10 @@ iframe {
 
 }
 
+.logo_blue {
+	width: 50px;
+	height: auto;
+}
 
 div#cookie_law_notification.cookielaw1.cookie_bottom {
 	display: grid;
@@ -277,7 +281,7 @@ nav {
 
 #my_navbar {
 	display: grid;
-	grid-template: 1fr 1fr 1fr 1fr 1fr/1fr 2fr 1fr;
+	grid-template: 1fr 1fr 1fr 1fr 1fr 1fr/1fr 2fr 1fr;
 
 
 	overflow: hidden;
@@ -301,7 +305,7 @@ nav {
 	text-align: center;
 	padding: 14px 16px;
 	text-decoration: none;
-	font-size: 35px;
+	font-size: 30px;
 
 	align-self: center;
 }
@@ -418,7 +422,6 @@ nav {
 
 /***********************MOBIL PORTRAIT*****************/
 @media screen and (min-width:375px) and (orientation:portrait) {
-	/* #splash {} */
 
 	#game iframe {
 		width: 362px;
@@ -429,6 +432,10 @@ nav {
 		width: 370px;
 		height: 270px;
 		margin-top: 10%;
+	}
+
+	.logo_blue {
+		width: 15vw;
 	}
 }
 
@@ -443,7 +450,7 @@ nav {
 			"infographic infographic infographic infographic"
 			"footer footer footer footer";
 		grid-row-gap: 150px;
-		grid-template-rows: auto;
+		grid-template-rows: none;
 	}
 
 	.navbar a {
@@ -573,7 +580,7 @@ nav {
 	#my_navbar {
 		overflow: hidden;
 		grid-template-rows: none;
-		grid-template-columns: 1fr 1fr 1fr 1fr;
+		grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
 		top: 0;
 		height: 55px;
 	}
@@ -582,21 +589,30 @@ nav {
 		bottom: auto;
 	}
 
+	a.nav0 {
+		grid-column: 1/2;
+		padding: 0;
+	}
+
+	.logo_blue {
+		width: 4vw;
+	}
 
 	a.nav1 {
-		grid-column: 1/2;
+		grid-column: 2/3;
+
 	}
 
 	a.nav2 {
-		grid-column: 2/3;
-	}
-
-	a.nav3 {
 		grid-column: 3/4;
 	}
 
-	a.nav4 {
+	a.nav3 {
 		grid-column: 4/5;
+	}
+
+	a.nav4 {
+		grid-column: 5/6;
 	}
 
 	#burgermenu {
@@ -634,6 +650,10 @@ nav {
 			"footer footer footer footer";
 		grid-row-gap: 150px;
 		grid-template-rows: auto;
+	}
+
+	.logo_blue {
+		width: 12vw;
 	}
 
 	#splash {
@@ -926,7 +946,7 @@ nav {
 	#my_navbar {
 		overflow: hidden;
 		grid-template-rows: none;
-		grid-template-columns: 1fr 1fr 1fr 1fr;
+		grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
 		top: 0;
 		height: 55px;
 	}
@@ -935,21 +955,25 @@ nav {
 		bottom: auto;
 	}
 
-
-	a.nav1 {
+	a.nav0 {
 		grid-column: 1/2;
+		padding: 0;
 	}
 
-	a.nav2 {
+	a.nav1 {
 		grid-column: 2/3;
 	}
 
-	a.nav3 {
+	a.nav2 {
 		grid-column: 3/4;
 	}
 
-	a.nav4 {
+	a.nav3 {
 		grid-column: 4/5;
+	}
+
+	a.nav4 {
+		grid-column: 5/6;
 	}
 
 	#burgermenu {

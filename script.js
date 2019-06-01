@@ -2,6 +2,7 @@
 
 //Toggle animation burger menu button
 document.querySelector(".burger").addEventListener("click", toggleMenu);
+document.querySelector("nav").addEventListener("click", toggleMenu);
 
 function toggleMenu() {
 	document.querySelector(".burger").classList.toggle("change");
