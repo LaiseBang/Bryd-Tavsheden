@@ -390,6 +390,8 @@ function s1OliverWalk() {
 
 function checkPlayerS1() {
     console.log("checkPlayer");
+    // remove eventlistner
+    document.querySelector(".oliver_walk_to_kitchen").removeEventListener("webkitAnimationEnd", checkPlayerS1);
     // CheckVariable
     if (player == "oliver") {
         setKitchen();
@@ -399,8 +401,6 @@ function checkPlayerS1() {
     } else {
         alert("Noget gik galt prøv igen");
     }
-    // remove eventlistner
-    document.querySelector(".oliver_walk_to_kitchen").removeEventListener("webkitAnimationEnd", checkPlayerS1);
 }
 
 function setKitchen() {
@@ -834,6 +834,7 @@ function s9() {
     maria_sprite_s9.classList.add("maria_talkcycle");
     oliver_container_s9.classList.remove("hide");
     oliver_sprite_s9.classList.add("oliver_smoking");
+    // document.querySelector("#shadow").classList.add("shadow_stand");
     document.querySelector("#shadow_container_s9").classList.remove("hide");
     setTimeout("s9NoSmoking()", 5000);
 }
@@ -1000,7 +1001,7 @@ function s11() {
 }
 
 function s11SifWalkes() {
-    console.log("v11SifWalkes");
+    console.log("s11SifWalkes");
     // clean-up
     maria_sprite_s11.classList.remove("maria_talkcycle");
     sif_container_s11.classList.add("sif_walk_out_of_kitchen");
@@ -1414,6 +1415,7 @@ function s18() {
     maria_container_s9_smoking.classList.add("maria_start_pos_s9_smoking");
     maria_sprite_s9_smoking.classList.add("maria_talkcycle");
     oliver_container_s9_smoking.classList.remove("hide");
+    dance_people_container_s9.classList.remove("hide");
     document.querySelector("#light_blue").classList.remove("hide");
     document.querySelector("#light_green").classList.remove("hide");
     document.querySelector("#light_purple").classList.remove("hide");
@@ -1431,6 +1433,7 @@ function s18OliverTalk() {
     // clean-up
     maria_sprite_s9_smoking.classList.remove("maria_talkcycle");
     oliver_sprite_s9_smoking.classList.add("oliver_talkcycle");
+    oliver_sprite_s9_smoking.classList.remove("oliver_smoking");
     document.getElementById("oliver_no_more").play();
     document.getElementById("oliver_no_more").onended = function () {
         setTimeout("theEnd()", 1000);
@@ -1447,6 +1450,7 @@ function s19() {
     maria_container_s9_smoking.classList.add("maria_start_pos_s9_smoking");
     maria_sprite_s9_smoking.classList.add("maria_talkcycle");
     oliver_container_s9_smoking.classList.remove("hide");
+    dance_people_container_s9.classList.remove("hide");
     document.querySelector("#light_blue").classList.remove("hide");
     document.querySelector("#light_green").classList.remove("hide");
     document.querySelector("#light_purple").classList.remove("hide");
@@ -1476,6 +1480,7 @@ function s21() {
     // clean-up
     choice_text_container_v9.classList.add("hide");
     choice_sound.pause();
+    private_party.pause();
     // set scene
     maria_container_s21.classList.remove("hide");
     oliver_container_s21.classList.remove("hide");
@@ -1624,6 +1629,7 @@ function s26() {
     choice_text_container_v12.classList.add("hide");
     choice_sound.pause();
     // set scene
+    private_party.play();
     livingroom.classList.remove("hide");
     door.classList.remove("hide");
     dance_people_container.classList.remove("hide");
@@ -1684,6 +1690,7 @@ function theEnd() {
     maria_container_s9_smoking.classList.add("hide");
     oliver_container_s9.classList.add("hide");
     oliver_container_s9_smoking.classList.add("hide");
+    dance_people_container_s9.classList.add("hide");
     document.querySelector("#light_blue").classList.add("hide");
     document.querySelector("#light_green").classList.add("hide");
     document.querySelector("#light_purple").classList.add("hide");
