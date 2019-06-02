@@ -394,7 +394,7 @@ function checkPlayerS1() {
     document.querySelector(".oliver_walk_to_kitchen").removeEventListener("webkitAnimationEnd", checkPlayerS1);
     // CheckVariable
     if (player == "oliver") {
-        setKitchen();
+        s2SetKitchen();
         console.log(player);
     } else if (player == "maria") {
         s3();
@@ -403,7 +403,7 @@ function checkPlayerS1() {
     }
 }
 
-function setKitchen() {
+function s2SetKitchen() {
     console.log("setKitchen");
     // clean-up
     dance_people_container.classList.add("hide");
@@ -509,7 +509,6 @@ function s4OliverToMaria() {
     maria_container_s4.classList.remove("hide");
     oliver_container_s4.classList.remove("hide");
     dance_people_container.classList.remove("hide");
-    // fade sound: partySound
     private_party.play();
     // Start anim: OliverWalkToMaria
     oliver_container_s4.classList.add("oliver_walk_into_livingroom");

@@ -480,7 +480,7 @@ p {
 #choice_text_container_v11 p,
 #choice_text_container_v12 p {
 	max-width: var(--gamewidth);
-	font-size: 5vw;
+	font-size: 4vw;
 	grid-column: 2/3;
 	grid-row: 2/3;
 
