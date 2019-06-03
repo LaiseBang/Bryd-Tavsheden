@@ -541,6 +541,9 @@ p {
 	z-index: 500;
 }
 
+#oliver_container_s12 {
+	z-index: 4;
+}
 .oliver_start_pos {
 	left: 45%;
 	top: 19%;
@@ -838,6 +841,9 @@ p {
 	z-index: 600;
 }
 
+#maria_container_s12 {
+	z-index: 4;
+}
 .maria_start_pos {
 	left: 5%;
 	top: 19%;
