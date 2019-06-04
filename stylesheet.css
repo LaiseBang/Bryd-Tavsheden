@@ -361,8 +361,16 @@ nav {
 	grid-template-rows: repeat(3, 1fr);
 }
 
+.footer_logo_zip {
+	grid-column: 2/3;
+	grid-row: 1/2;
+	width: 30vw;
+	height: auto;
+	place-self: center;
+}
+
 #footer_wrapper {
-	grid-row: 1/4;
+	grid-row: 2/4;
 	grid-column: 2/3;
 
 	display: grid;
@@ -628,14 +636,22 @@ nav {
 		grid-area: footer;
 	}
 
+	#footer_wrapper {
+		grid-row: 1/4;
+	}
+
 	#footer_links {
 		display: grid;
 		margin-top: 1rem;
 	}
 
-	#footer_links a:hover {
-		color: #49a3b4;
+	.footer_logo_zip {
+		width: 15vw;
+		grid-column: 1/2;
+		margin: 0;
+		margin-right: 20px;
 	}
+
 
 }
 
@@ -772,6 +788,17 @@ nav {
 
 	#footer {
 		grid-area: footer;
+	}
+
+	#footer_wrapper {
+		grid-row: 1/4;
+	}
+
+	.footer_logo_zip {
+		width: 15vw;
+		grid-column: 1/2;
+		margin: 0;
+		margin-right: 20px;
 	}
 
 }
@@ -987,6 +1014,16 @@ nav {
 
 	#footer {
 		grid-area: footer;
+	}
+
+	#footer_wrapper {
+		grid-row: 1/4;
+	}
+
+	.footer_logo_zip {
+		width: 10vw;
+		grid-column: 1/2;
+		margin: 0.4rem 0 0 9vw;
 	}
 
 	#footer p {
