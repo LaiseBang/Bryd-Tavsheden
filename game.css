@@ -360,7 +360,7 @@ p {
 }
 
 #intro {
-	background-image: url(img/backgrounds/frontpage.jpg);
+	background-image: url(img/backgrounds/frontpage.webp);
 	background-repeat: no-repeat;
 	background-size: 100%;
 	width: var(--gamewidth);
